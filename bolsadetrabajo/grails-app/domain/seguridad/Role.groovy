@@ -1,4 +1,4 @@
-package prueba1.security
+package seguridad
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString

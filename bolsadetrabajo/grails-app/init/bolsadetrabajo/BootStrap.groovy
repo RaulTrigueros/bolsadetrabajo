@@ -1,15 +1,15 @@
 package bolsadetrabajo
 
 
-import prueba1.security.User
+import seguridad.User
 import groovy.transform.CompileStatic
 import javax.management.relation.Role
 import org.springframework.context.annotation.Role
-import prueba1.security.RoleGroup
-import prueba1.security.RoleGroupRole
-import prueba1.security.User
-import prueba1.security.UserRoleGroup
-import prueba1.security.Role
+import seguridad.RoleGroup
+import seguridad.RoleGroupRole
+import seguridad.User
+import seguridad.UserRoleGroup
+import seguridad.Role
 
 
 @CompileStatic

@@ -1,4 +1,4 @@
-package prueba1.security
+package seguridad
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
@@ -25,6 +25,7 @@ class User implements Serializable {
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
+     
     }
 
     static mapping = {

@@ -1,4 +1,4 @@
-import prueba1.security.UserPasswordEncoderListener
+import seguridad.UserPasswordEncoderListener
 beans = {
     userPasswordEncoderListener(UserPasswordEncoderListener)
 }

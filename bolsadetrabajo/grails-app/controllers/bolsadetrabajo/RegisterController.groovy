@@ -3,9 +3,9 @@ package bolsadetrabajo
 import grails.validation.ValidationException
 import grails.gorm.transactions.Transactional
 import grails.plugin.springsecurity.annotation.Secured
-import prueba1.security.Role
-import prueba1.security.User
-import prueba1.security.UserRole
+import seguridad.Role
+import seguridad.User
+import seguridad.UserRole
 
 @Transactional
 @Secured('permitAll')

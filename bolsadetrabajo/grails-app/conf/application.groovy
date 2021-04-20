@@ -1,8 +1,8 @@
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'prueba1.security.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'prueba1.security.UserRole'
-grails.plugin.springsecurity.authority.className = 'prueba1.security.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'seguridad.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'seguridad.UserRole'
+grails.plugin.springsecurity.authority.className = 'seguridad.Role'
 grails.plugin.springsecurity.authority.groupAuthorityNameField = 'authorities'
 grails.plugin.springsecurity.useRoleGroups = true
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"

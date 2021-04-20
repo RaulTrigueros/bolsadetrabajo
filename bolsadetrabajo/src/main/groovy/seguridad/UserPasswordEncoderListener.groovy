@@ -1,10 +1,13 @@
-package prueba1.security
+package seguridad
 
 import grails.plugin.springsecurity.SpringSecurityService
 import org.grails.datastore.mapping.engine.event.AbstractPersistenceEvent
 import org.grails.datastore.mapping.engine.event.PreInsertEvent
 import org.grails.datastore.mapping.engine.event.PreUpdateEvent
 import org.springframework.beans.factory.annotation.Autowired
+import sun.nio.fs.WindowsUserPrincipals.User
+import seguridad.User
+
 import grails.events.annotation.gorm.Listener
 import groovy.transform.CompileStatic
 
