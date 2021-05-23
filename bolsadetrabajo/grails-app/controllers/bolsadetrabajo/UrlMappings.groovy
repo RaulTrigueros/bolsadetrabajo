@@ -12,7 +12,7 @@ class UrlMappings {
       
         "/"(view:"/index")
      //  "/"(controller:'user', action:'index')
-       "/roles"(controller:'userRole', action:'index')
+       "/user/roles"(controller:'userRole', action:'index')
        "/crearRol"(controller:'userRole', action:'create')
        "500"(view:'/error')
        "404"(view:'/notFound')
