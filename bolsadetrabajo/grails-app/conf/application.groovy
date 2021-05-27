@@ -23,7 +23,9 @@ grails.plugin.springsecurity.interceptUrlMap = [
    // [pattern: '/console/**', 	       access: ['permitAll']],
     [pattern: '/user/**', 	       access: ['permitAll']],
     [pattern: '/userRole/**', 	       access: ['permitAll']],
-    [pattern: '/roles/', 	       access: ['permitAll']]
+    [pattern: '/roles/', 	       access: ['permitAll']],
+    [pattern: '/dtspersonales/**',     access: ['permitAll']]
+
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
@@ -39,4 +41,5 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/login/auth'
 
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/dtspersonales/index' /*carlos*/
 
