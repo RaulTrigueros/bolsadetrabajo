@@ -1,7 +1,7 @@
 package seguridad
 import java.util.Date
 class Persona {
-    //Integer idPersona
+    Integer id
     String nombres
     String apellidos
     String genero
@@ -21,7 +21,6 @@ class Persona {
     String linkedin
     
     static constraints = {
-        //idPersona (nulleable:false, blank:false, unique:true, generator: 'auto-increment')
         nombres (size:1..50, blank:false)
         apellidos (size:1..50, blank:false)
         genero (inList:["Masculino", "Femenino"], blank:false)
@@ -40,5 +39,8 @@ class Persona {
         twitter (nulleable:false,blank:true)
         linkedin (nulleable:true,blank:true)
         telFijo (nulleable:true,blank:true)
+    }
+     static mapping ={
+        id column: 'id_persona'
     }
 }

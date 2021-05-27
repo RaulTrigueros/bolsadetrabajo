@@ -2,6 +2,7 @@ package publicaciones
 import java.util.Date
 class Publicaciones {
     
+    Integer id
     String nombrePublicacion
     String tipoPublicacion
     Date fechaPubliacion
@@ -15,5 +16,9 @@ class Publicaciones {
         lugarPublicacion (nulleable:true, blank:false, size:1..50)
         edicion (nulleable:true, blank:false, size:1..20)
         isbn (nulleable:true, blank:false, size:1..20)
+    }
+    
+     static mapping ={
+        id column: 'id_publicaciones'
     }
 }
