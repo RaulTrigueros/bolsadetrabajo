@@ -22,6 +22,8 @@
             <div class="container">
                 <a class="navbar-brand" href="/">BADMASTERS</a>
                 <a class="btn btn-primary" href="/login/auth">Iniciar sesión como Postulante</a>
+                <a class="btn btn-primary" href="/login/auth">Registrate</a>
+                <a class="btn btn-primary" href="/login/auth">Acceso Empresas</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -31,12 +33,12 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <h1 class="mb-5">BADMASTERS OFERTAS DE TRABAJO, OPORTUNIDADES DE EMPLEO</h1>
                             <!-- Signup form-->
                             <form>
                                 <div class="input-group input-group-lg">
-                                    <input class="form-control" type="text" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="button-submit" />
-                                    <button class="btn btn-primary" id="button-submit" type="button">Sign up!</button>
+                                    <input class="form-control" type="text" placeholder="Búsqueda" aria-label="Enter your email..." aria-describedby="button-submit" />
+                                    <button class="btn btn-primary" id="button-submit" type="button" href="/login/auth">Buscar</button>
                                 </div>
                             </form>
                         </div>

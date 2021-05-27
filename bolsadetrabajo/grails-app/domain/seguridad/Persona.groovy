@@ -1,14 +1,13 @@
 package seguridad
 import java.util.Date
 class Persona {
-    String primerNombre
-    String segundoNombre
-    String primerApellido
-    String segundoApellido
+    //Integer idPersona
+    String nombres
+    String apellidos
     String genero
     Date fechaNac
-    String DUI
-    String pasaporte
+    String tipoDocumento
+    String numDocumento
     String NIT
     String NUP
     String direccion
@@ -17,21 +16,29 @@ class Persona {
     String correo
     String facebook
     String instagram
-    String whastapp
+    String whatsapp
     String twitter
     String linkedin
     
     static constraints = {
-        nombres (size:1..60 blank:false)
-        apellidos (size:1..60 blank:false)
+        //idPersona (nulleable:false, blank:false, unique:true, generator: 'auto-increment')
+        nombres (size:1..50, blank:false)
+        apellidos (size:1..50, blank:false)
         genero (inList:["Masculino", "Femenino"], blank:false)
         fechaNac (blank:false)
-        DUI (size:8..9, unique:true, blank:false) 
+        tipoDocumento (inList:["DUI","Pasaporte"])
+        numDocumento (size:8..9, unique:true, blank:false) 
         NIT (unique:true, blank:false)
-        NUP (unique:true, blank:true)
+        NUP (nulleable:true,unique:true, blank:true)
         direccion (blank:false)
-        telFijo (blank:true)
+        telFijo (nulleable:true,blank:true)
         celular (blank:false)
         correo (email:true)
+        facebook (nulleable:true,blank:true)
+        instagram (nulleable:true,blank:true)
+        whatsapp (nulleable:true,blank:true)
+        twitter (nulleable:false,blank:true)
+        linkedin (nulleable:true,blank:true)
+        telFijo (nulleable:true,blank:true)
     }
 }
