@@ -1,4 +1,4 @@
-package dtspersonales
+package seguridad
 
 import grails.gorm.services.Service
 

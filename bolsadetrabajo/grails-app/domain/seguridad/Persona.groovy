@@ -1,6 +1,6 @@
-package dtspersonales
+package seguridad
 import java.util.Date
-class Dtspersonales {
+class Persona {
     String primerNombre
     String segundoNombre
     String primerApellido
@@ -22,10 +22,8 @@ class Dtspersonales {
     String linkedin
     
     static constraints = {
-        primerNombre (size:1..50, blank:false)
-        segundoNombre (size:1..50, blank:false)
-        primerApellido (size:1..50, blank:false)
-        segundoApellido (size:1..50, blank:false)
+        nombres (size:1..60 blank:false)
+        apellidos (size:1..60 blank:false)
         genero (inList:["Masculino", "Femenino"], blank:false)
         fechaNac (blank:false)
         DUI (size:8..9, unique:true, blank:false) 
