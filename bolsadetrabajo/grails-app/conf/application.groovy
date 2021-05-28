@@ -34,7 +34,8 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/explaboral/**',        access: ['permitAll']],
     [pattern: '/perfilPuesto/**',      access: ['permitAll']],
     [pattern: '/certificacion/**',     access: ['permitAll']],
-    [pattern: '/idioma/**', 	       access: ['permitAll']]
+    [pattern: '/idioma/**', 	       access: ['permitAll']],
+    [pattern: '/personaRecomendacion/**', access: ['permitAll']]
 
 
 ]
