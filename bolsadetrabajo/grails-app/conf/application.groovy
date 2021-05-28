@@ -19,13 +19,24 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/**/favicon.ico',       access: ['permitAll']],
     [pattern: '/login/**',             access: ['permitAll']],
     [pattern: '/logout/**',            access: ['permitAll']],
-   // [pattern: '/dbconsole/**',         access: ['permitAll']],
-   // [pattern: '/console/**', 	       access: ['permitAll']],
+    [pattern: '/dbconsole/**',         access: ['permitAll']],
+    [pattern: '/console/**', 	       access: ['permitAll']],
     [pattern: '/user/**', 	       access: ['permitAll']],
     [pattern: '/userRole/**', 	       access: ['permitAll']],
+    [pattern: '/roles/', 	       access: ['permitAll']],
     [pattern: '/crearRol/**', 	       access: ['permitAll']],
     [pattern: '/login/register',       access: ['permitAll']],
     [pattern: '/user/roles', 	       access: ['permitAll']]
+    [pattern: '/persona/**',           access: ['permitAll']],
+    [pattern: '/publicaciones/**',     access: ['permitAll']],
+    [pattern: '/logro/**',             access: ['permitAll']],
+    [pattern: '/idioma/**', 	       access: ['permitAll']],
+    [pattern: '/explaboral/**',        access: ['permitAll']],
+    [pattern: '/perfilPuesto/**',      access: ['permitAll']],
+    [pattern: '/certificacion/**',     access: ['permitAll']],
+    [pattern: '/idioma/**', 	       access: ['permitAll']]
+
+
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
@@ -41,4 +52,5 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/login/auth'
 
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
 
