@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'persona.label', default: 'Persona')}" />
-        <title>Crear Personas</title>
+        <title>INGRESO DE DATOS PERSONALES</title>
     </head>
     <body>
         <a href="#create-persona" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -14,7 +14,7 @@
             </ul>
         </div>
         <div id="create-persona" class="content scaffold-create" role="main">
-            <h1>Crear Persona</h1>
+            <h1>INGRESAR DATOS PERSONALES</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -30,7 +30,7 @@
                     <f:all bean="persona"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="Crear" />
+                    <g:submitButton name="create" class="save"  value="Crear" />
                 </fieldset>
             </g:form>
         </div>

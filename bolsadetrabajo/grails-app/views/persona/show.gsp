@@ -23,6 +23,7 @@
             <g:form resource="${this.persona}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.persona}">Editar</g:link>
+                    <li><a class="home" href="${createLink(uri: '/logro/create')}" id="${this.persona}">CREAR UN LOGRO</a></li>
                     <input class="delete" type="submit" value="Eliminar" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>
             </g:form>
