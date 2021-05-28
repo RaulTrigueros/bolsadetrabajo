@@ -5,6 +5,7 @@ class Logro {
     
     Integer id
     Persona idPersona
+    Persona nombres
     String tipo_logro
     String nombre_logro
     Date fecha_logro
