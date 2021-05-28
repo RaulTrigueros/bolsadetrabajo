@@ -32,16 +32,16 @@
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+                                                <label class="form-check-label" for="inputRememberPassword">Recordar contraseña</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/login/password.gsp">Forgot Password?</a>
+                                                <a class="small" href="/login/password">¿Has olvidado tu contraseña?</a>
                                                 <button id="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Acceder</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/login/register.gsp">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="/login/register">¿Necesitas una cuenta? ¡Inscribirse!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -53,12 +53,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright &copy; BADMASTERS 2021</div>
                         </div>
                     </div>
                 </footer>
