@@ -2,8 +2,6 @@ package curriculum
 import seguridad.Persona
 
 class Certificacion {
-    
-    Integer id  
     Persona idPersona;
     String nombreCertificacion;
     String codigoCertificacion;
@@ -11,7 +9,9 @@ class Certificacion {
     Date fechaFin;
     String tipoCertificacion;
     String institucionDeCertificacion
-
+    
+    static belongsTo = [persona:Persona]
+    
     static constraints = {
        
      nombreCertificacion (size:1..50, blank:false)
@@ -23,6 +23,6 @@ class Certificacion {
         
     }
     static mapping ={
-        id column: 'id_certificacion'
+        id column: 'id_cer'
     }
 }

@@ -8,7 +8,7 @@ class Logro {
     String nombre_logro
     Date fecha_logro
 
-    static belongsTo = [Persona]
+    static belongsTo = [persona:Persona]
     
     static constraints = {
      tipo_logro (inList:["Condecoración","Concurso", "Meta"]) 

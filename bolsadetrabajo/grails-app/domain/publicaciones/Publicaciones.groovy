@@ -1,4 +1,5 @@
 package publicaciones
+import seguridad.*
 import java.util.Date
 class Publicaciones {
     
@@ -10,6 +11,8 @@ class Publicaciones {
     String edicion
     String isbn
 
+    static belongsTo = [persona:Persona]
+    
     static constraints = {
         nombrePublicacion (nullable:true, blank:false, size:1..100)
         tipoPublicacion (nullable:true, blank:false, size:1..15)
@@ -19,6 +22,6 @@ class Publicaciones {
     }
     
      static mapping ={
-        id column: 'id_publicaciones'
+        id column: 'id_post'
     }
 }

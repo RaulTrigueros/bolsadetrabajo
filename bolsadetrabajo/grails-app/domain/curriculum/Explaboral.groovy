@@ -3,14 +3,14 @@ import seguridad.Persona
 import java.util.Date
 class Explaboral {
     
-    Integer id
-    //Persona idPersona
     String organizacionDeExperiencia
     String contactoOrganizacion
     String puestoTrabajo
     Date fechaInicio
     Date fechaFin
     String funcionesDesempenadas
+    
+    static belongsTo = [persona:Persona]
 
     static constraints = {
         organizacionDeExperiencia (blank:false, masSize:200)
@@ -19,6 +19,6 @@ class Explaboral {
         funcionesDesempenadas (blank:false, masSize:150)
     }
      static mapping ={
-        id column: 'id_explaboral'
+        id column: 'id_xp'
     }
 }

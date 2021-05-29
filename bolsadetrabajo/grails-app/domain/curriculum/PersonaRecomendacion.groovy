@@ -10,6 +10,8 @@ class PersonaRecomendacion {
     String correoRecomendador
     String institucionRecomendacion
     
+    static belongsTo = [persona:Persona]
+    
     static constraints = {
         nombreRecomendacion (size:1..50, blank:false)
         telefonoRecomendador (blank:false, masSize:9)
@@ -18,6 +20,6 @@ class PersonaRecomendacion {
     }
     
     static mapping ={
-        id column: 'id_recomendacion_personal'
+        id column: 'id_recom'
     }
 }
