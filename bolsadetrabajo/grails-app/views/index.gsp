@@ -36,35 +36,19 @@
 
         <!-- Body content -->
         <nav class="navbar navbar-light bg-light static-top">
+            <div class = "navbar-nav mr-auto">
+                <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
+            </div> 
             <div class="container">
-                <div class = "navbar-nav mr-auto">
-                    <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
-                </div> 
-                <div class="button navbar-right">
-                    
-                    <a class="btn btn-primary" data-wow-delay="0.1s" href="/login/auth">Iniciar Candidato</a>
+                <div class="button navbar-right"> 
+                    <a class="btn btn-primary" href="/login/auth">Iniciar Candidato</a>
                     <a class="btn btn-primary" href="/register">Registrate</a>
                     <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
-                    <a class="btn btn-primary" href="/login/auth">Contacta con nosotro</a>
+                    <a class="btn btn-primary" href="/login/auth">Contacta con nosotros</a>
                 </div>
             </div>
         </nav>
-        
-       <!-- <nav class="navbar navbar-default">
-            <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
-          <div class="container">
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <div class="button navbar-right">
-                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.1s">Iniciar Candidato</button>
-                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.2s">Registrarse como Candidato</button>
-                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.3s">Iniciar Empresa</button>
-                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.4s">Registrarse como Empresa</button>
-                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.5s">Contacta con nosotros</button>
-              </div>
-            </div><!-- /.navbar-collapse -->
-      <!--    </div><!-- /.container-fluid -->
-     <!--   </nav>-->
-
+     
         <div class="slider-area">
             <div class="slider">
                 <div id="bg-slider" class="owl-carousel owl-theme">

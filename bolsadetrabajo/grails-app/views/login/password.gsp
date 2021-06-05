@@ -7,10 +7,13 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Restablecer la contraseña</title>
-        <<asset:stylesheet src="principal.css"/>
+        <asset:stylesheet src="principal.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
+        <div class = "navbar-nav mr-auto">
+            <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
+        </div> 
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
