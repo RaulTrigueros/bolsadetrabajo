@@ -10,7 +10,6 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/',                     access: ['permitAll']],
     [pattern: '/error',                access: ['permitAll']],
     [pattern: '/index',                access: ['ROLE_ADMIN']],
-    [pattern: '/index.gsp',            access: ['ROLE_ADMIN']],
     [pattern: '/shutdown',             access: ['permitAll']],
     [pattern: '/assets/**',            access: ['permitAll']],
     [pattern: '/**/js/**',             access: ['permitAll']],
@@ -21,15 +20,16 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/logout/**',            access: ['permitAll']],
     [pattern: '/dbconsole/**',         access: ['permitAll']],
     [pattern: '/console/**', 	       access: ['permitAll']],
-    [pattern: '/user/**', 	       access: ['permitAll']],
-    [pattern: '/userRole/**', 	       access: ['permitAll']],
-    [pattern: '/roles/', 	       access: ['permitAll']],
-    [pattern: '/crearRol/**', 	       access: ['permitAll']],
-    [pattern: '/login/register',       access: ['permitAll']],
-    [pattern: '/user/roles', 	       access: ['permitAll']],
+    [pattern: '/user/**', 	       access: ['ROLE_ADMIN']],
+    [pattern: '/userRole/**', 	       access: ['ROLE_ADMIN']],
+    [pattern: '/roles/', 	       access: ['ROLE_ADMIN']],
+    [pattern: '/crearRol/**', 	       access: ['ROLE_ADMIN']],
+    [pattern: '/register/**',          access: ['permitAll']],
+    [pattern: '/password/**',          access: ['permitAll']],
+    [pattern: '/user/roles', 	       access: ['ROLE_ADMIN']],
     [pattern: '/persona/**',           access: ['permitAll']],
-    [pattern: '/publicaciones/**',     access: ['permitAll']],
-    [pattern: '/logro/**',             access: ['permitAll']],
+    [pattern: '/publicaciones/**',     access: ['ROLE_ADMIN']],
+    [pattern: '/logro/**',             access: ['ROLE_ADMIN']],
     [pattern: '/idioma/**', 	       access: ['permitAll']],
     [pattern: '/explaboral/**',        access: ['permitAll']],
     [pattern: '/perfilPuesto/**',      access: ['permitAll']],
@@ -54,6 +54,8 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/login/auth'
 
+grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
+//grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
+//grails.plugin.springsecurity.securityConfigType = "Annotation"
 

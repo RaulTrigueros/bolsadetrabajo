@@ -1,187 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>BADMASTERS</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="assets/stylesheets/portal.css" rel="stylesheet" />
-        <asset:stylesheet src="portal.css"/>
+        <meta name="description" content="Bolsa de trabajo">
+        <meta name="author" content="badmasters">
+        <meta name="keyword" content="html, css, bootstrap, job-board">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
+        <asset:stylesheet src="normalize.css"/>
+        <asset:stylesheet src="font-awesome.min.css"/>
+        <asset:stylesheet src="fontello.css"/>
+        <asset:stylesheet src="animate.css"/>      
+        <asset:stylesheet src="pbootstrap.min.cs"/> 
+        <asset:stylesheet src="owl.carousel.css"/>
+        <asset:stylesheet src="owl.theme.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="stylePortal.css"/>
+        <asset:stylesheet src="responsive.css"/>
+        <asset:javascript src="/vendor/modernizr-2.6.2.min.js"/>
+        <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <!-- Navigation-->
+
+        <!-- Body content -->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="/">BADMASTERS</a>
-                <a class="btn btn-primary" href="/login/auth">Iniciar sesión como Postulante</a>
-                <a class="btn btn-primary" href="/login/auth">Registrate</a>
-                <a class="btn btn-primary" href="/login/auth">Acceso Empresas</a>
+                <div class = "navbar-nav mr-auto">
+                    <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
+                </div> 
+                <div class="button navbar-right">
+                    
+                    <a class="btn btn-primary" data-wow-delay="0.1s" href="/login/auth">Iniciar Candidato</a>
+                    <a class="btn btn-primary" href="/register">Registrate</a>
+                    <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
+                    <a class="btn btn-primary" href="/login/auth">Contacta con nosotro</a>
+                </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">BADMASTERS OFERTAS DE TRABAJO, OPORTUNIDADES DE EMPLEO</h1>
-                            <!-- Signup form-->
-                            <form>
-                                <div class="input-group input-group-lg">
-                                    <input class="form-control" type="text" placeholder="Búsqueda" aria-label="Enter your email..." aria-describedby="button-submit" />
-                                    <button class="btn btn-primary" id="button-submit" type="button" href="/login/auth">Buscar</button>
+        
+       <!-- <nav class="navbar navbar-default">
+            <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
+          <div class="container">
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="button navbar-right">
+                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.1s">Iniciar Candidato</button>
+                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.2s">Registrarse como Candidato</button>
+                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.3s">Iniciar Empresa</button>
+                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.4s">Registrarse como Empresa</button>
+                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.5s">Contacta con nosotros</button>
+              </div>
+            </div><!-- /.navbar-collapse -->
+      <!--    </div><!-- /.container-fluid -->
+     <!--   </nav>-->
+
+        <div class="slider-area">
+            <div class="slider">
+                <div id="bg-slider" class="owl-carousel owl-theme">
+                 
+                  <div class="item"><asset:image src="slider-image-3.jpg" alt="slider3"/></div>
+                  <div class="item"><asset:image src="slider-image-2.jpg" alt="slider2"/></div>
+                  <div class="item"><asset:image src="slider-image-1.jpg" alt="slider1"/></div>
+                 
+                </div>
+            </div>
+            <div class="container slider-content">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                        <h2>BADMASTERS OFERTAS DE TRABAJO, OPORTUNIDADES DE EMPLEO</h2>
+                        <div class="search-form wow pulse" data-wow-delay="0.8s">
+                            <form action="" class=" form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Job Key Word">
                                 </div>
+                                <div class="form-group">
+                                    <select name="" id="" class="form-control">
+                                        <option>Select Your City</option>
+                                        <option selected>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="" id="" class="form-control">
+                                        <option>Select Your Category</option>
+                                        <option selected>Graphic Design</option>
+                                        <option>Web Design</option>
+                                        <option>App Design</option>
+                                    </select>
+                                </div>
+                                <input type="submit" class="btn" value="Search">
+
+
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
+        </div>
+
+        <div class="content-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Fully Responsive</h3>
-                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
+                    <h5>Our Process</h5>
+                    <h2>How we work for you?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum dolorem, rem officia, id explicabo sapiente</p>
+                </div>
+                <div class="row how-it-work text-center">
+                    <div class="col-md-4">
+                        <div class="single-work wow fadeInUp" data-wow-delay="0.8s">
+                            <img src="img/how-work1.png" alt="">
+                            <h3>Searching for the best job</h3>
+                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 5 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                    <div class="col-md-4">
+                        <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
+                            <img src="img/how-work2.png" alt="">
+                            <h3>Searching for the best job</h3>
+                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                    <div class="col-md-4">
+                        <div class="single-work wow fadeInUp"  data-wow-delay="1s">
+                            <img src="img/how-work3.png" alt="">
+                            <h3>Searching for the best job</h3>
+                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Image Showcases-->
-        <section class="showcase">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fully Responsive Design</h2>
-                        <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Updated For Bootstrap 5</h2>
-                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Easy to Use & Customize</h2>
-                        <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Testimonials-->
-        <section class="testimonials text-center bg-light">
+            <hr>
+
             <div class="container">
-                <h2 class="mb-5">What people are saying...</h2>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                            <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                <div class="row job-posting wow fadeInUp" data-wow-delay="1s">
+                    <div role="tabpanel">
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#job-seekers" aria-controls="home" role="tab" data-toggle="tab">Job Seekers</a></li>
+                        <li role="presentation"><a href="#employeers" aria-controls="profile" role="tab" data-toggle="tab">Employeers</a></li>
+                      </ul>
+
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="job-seekers">
+                            <ul class="list-inline job-seeker">
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-5.jpg" alt="">
+                                        <div class="overlay"><h3>Ohidul Islam</h3><p>Web Designer</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-6.jpg" alt="">
+                                        <div class="overlay"><h3>Mohidul Islam</h3><p>CEO</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-3.jpg" alt="">
+                                        <div class="overlay"><h3>Unknown girl</h3><p>Graphic Designer</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-4.jpg" alt="">
+                                        <div class="overlay"><h3>Eftakher Alam</h3><p>Graphic Designer</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-2.jpg" alt="">
+                                        <div class="overlay"><h3>Mark Otto</h3><p>Founder</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-1.jpg" alt="">
+                                        <div class="overlay"><h3>Rasel Ahmed</h3><p>Web Developer</p></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="employeers">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee4.png" alt="">
+                                        <div class="overlay"><h3>Instagram</h3></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee5.png" alt="">
+                                        <div class="overlay"><h3>Microsoft</h3></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee6.png" alt="">
+                                        <div class="overlay"><h3>Dribbble</h3></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee1.png" alt="">
+                                        <div class="overlay"><h3>Beats Music</h3></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee2.png" alt="">
+                                        <div class="overlay"><h3>Facebook</h3></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/employee3.png" alt="">
+                                        <div class="overlay"><h3>Twitter</h3></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container">
+                <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
+                    <h5>Recent Jobs</h5>
+                    <h2><span>54716</span> Available jobs for you</h2>
+                </div>
+                <div class="row jobs">
+                    <div class="col-md-9">
+                        <div class="job-posts table-responsive">
+                            <table class="table">
+                                <tr class="odd wow fadeInUp" data-wow-delay="1s">
+                                    <td class="tbl-logo"><img src="img/job-logo1.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Web Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>dribbble community</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even wow fadeInUp" data-wow-delay="1.1s">
+                                    <td class="tbl-logo"><img src="img/job-logo2.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Front End Developer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Jolil corporation</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd wow fadeInUp" data-wow-delay="1.2s">
+                                    <td class="tbl-logo"><img src="img/job-logo3.png" alt=""></td>
+                                    <td class="tbl-title"><h4>HR Manager <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Fanta bevarage</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even wow fadeInUp" data-wow-delay="1.3s">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd wow fadeInUp" data-wow-delay="1.4s">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="more-jobs">
+                            <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                            <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                    <div class="col-md-3 hidden-sm">
+                        <div class="job-add wow fadeInRight" data-wow-delay="1.5s">
+                            <h2>Seeking a job?</h2>
+                            <a href="#">Create a Account</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Call to Action-->
-        <section class="call-to-action text-white text-center" id="signup">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                        <!-- Signup form-->
-                        <form>
-                            <div class="input-group input-group-lg">
-                                <input class="form-control" type="text" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="button-submit" />
-                                <button class="btn btn-primary" id="button-submit" type="button">Sign up!</button>
+            <hr>
+
+            <div class="container">
+                <div class="row page-title text-center  wow bounce"  data-wow-delay=".7s">
+                    <h5>TESTIMONIALS</h5>
+                    <h2>WHAT PEOPLES ARE SAYING</h2>
+                </div>
+                <div class="row testimonial">
+                    <div class="col-md-12">
+                        <div id="testimonial-slider">
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face wow fadeInRight" data-wow-delay=".9s"> 
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
                             </div>
-                        </form>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-light">
+
+        </div>
+        <div class="footer-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
+                <div class="row footer">
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <img src="img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati architecto quaerat facere blanditiis tempora sequi nulla accusamus, possimus cum necessitatibus suscipit quia autem mollitia, similique quisquam molestias. Vel unde, blanditiis.</p>
+                        </div>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <h4>Twitter update</h4>
+                            <div class="twitter-updates">
+                                <div class="single-tweets">
+                                    <h5>ABOUT 9 HOURS</h5>
+                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                </div>
+                                <div class="single-tweets">
+                                    <h5>ABOUT 9 HOURS</h5>
+                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <h4>Useful lnks</h4>
+                            <div class="footer-links">
+                                <ul class="list-unstyled">
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="" class="active">Services</a></li>
+                                    <li><a href="">Work</a></li>
+                                    <li><a href="">Our Blog</a></li>
+                                    <li><a href="">Customers Testimonials</a></li>
+                                    <li><a href="">Affliate</a></li>
+                                    <li><a href="">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="row footer-copy">
+                    <p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a> </p>
+                </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="assets/javascripts/portal.js"></script>
-        <asset:javascript src="portal.js"/>
+        </div>
+		
+		
+		
+		
+		
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+         <asset:javascript src="pbootstrap.min.js"/>
+         <asset:javascript src="owl.carousel.min.js"/>
+         <asset:javascript src="wow.js"/>
+         <asset:javascript src="main.js"/>
+        
     </body>
 </html>

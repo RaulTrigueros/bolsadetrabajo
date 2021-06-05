@@ -28,20 +28,20 @@
                                             <div class="form-group">
                                                 <label for="password">Contraseña</label>
                                                 <input type="password" class="form-control" name="${passwordParameter ?: 'password'}" id="password"/>
-                                                <i id="passwordToggler" title="toggle password display" onclick="passwordDisplayToggle()">&#128065;</i>
+                                               
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
                                                 <label class="form-check-label" for="inputRememberPassword">Recordar contraseña</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/login/password">¿Has olvidado tu contraseña?</a>
+                                                <a class="small" href="/password">¿Has olvidado tu contraseña?</a>
                                                 <button id="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Acceder</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/login/register">¿Necesitas una cuenta? ¡Inscribirse!</a></div>
+                                        <div class="small"><a href="/register">¿Necesitas una cuenta? ¡Inscribirse!</a></div>
                                     </div>
                                 </div>
                             </div>
