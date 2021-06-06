@@ -1,7 +1,6 @@
 package seguridad
 import curriculum.*
 import empresa.*
-import publicaciones.*
 import java.util.Date
 class Persona {
     
@@ -20,7 +19,7 @@ class Persona {
     
     
     static hasMany = [logros:Logro, redes:RedSocial, experienciasLaborales:Explaboral, certificaciones:Certificacion, idiomas:Idioma, 
-                        recomendaciones:PersonaRecomendacion, publicaciones:Publicaciones]
+                        recomendaciones:PersonaRecomendacion, publicacion:Publicacion]
 
     
     static constraints = {

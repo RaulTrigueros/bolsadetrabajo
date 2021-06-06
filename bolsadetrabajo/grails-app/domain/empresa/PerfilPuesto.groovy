@@ -1,9 +1,14 @@
 package empresa
+import seguridad.Persona
+import empresa.Empresa
 
 class PerfilPuesto {
     
     Integer id
-    //PuestoTrabajo id_puesto_trabajo
+    Persona idPersona
+    Empresa idEmpresa
+    String nombrePuestoTrabajo
+    String descripcionPuesto
     String conocimientosNecesarios
     String perfilAcademico
     String habilidades
@@ -13,6 +18,8 @@ class PerfilPuesto {
     String ubicacionGeografica
     
     static constraints = {
+        nombrePuestoTrabajo (blank:false, masSize:200)
+        descripcionPuesto (blank:false, masSize:200)
         conocimientosNecesarios (blank:false, masSize:200)
         perfilAcademico (blank:false, masSize:200)
         habilidades (blank:false, masSize:200)
