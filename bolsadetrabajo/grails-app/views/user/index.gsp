@@ -28,5 +28,5 @@
             </div>
         </div>
     </body>
-    </sec:ifAnyGranted>
+    
 </html>

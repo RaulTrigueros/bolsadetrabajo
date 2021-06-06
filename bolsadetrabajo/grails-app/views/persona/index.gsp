@@ -7,6 +7,7 @@
     </head>
     <body>
         <a href="#list-persona" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+        
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
