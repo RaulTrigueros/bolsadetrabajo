@@ -33,7 +33,7 @@
         <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-
+    
         <!-- Body content -->
         <nav class="navbar navbar-light bg-light static-top">
             <div class = "navbar-nav mr-auto">
@@ -41,9 +41,23 @@
             </div> 
             <div class="container">
                 <div class="button navbar-right"> 
-                    <a class="btn btn-primary" href="/login/auth">Iniciar Candidato</a>
+                     <!--Acceder como postulante-->
+                    <sec:ifLoggedIn>
+                        <a class="btn btn-primary" href="/user/index">Ir a <sec:username/></a> 
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <a class="btn btn-primary" href="/login/auth">Iniciar Candidato</a>
+                    </sec:ifNotLoggedIn>
+                     <!--Registrar postulante-->
                     <a class="btn btn-primary" href="/register">Registrate</a>
-                    <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
+                    <!--Acceder como empresa-->
+                   <sec:ifLoggedIn>
+                        <a class="btn btn-primary" href="/empresa/index">Ir a <sec:username/></a> 
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                        <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
+                    </sec:ifNotLoggedIn>
+                     <!--Contactar servicio de plataforma como empresa-->
                     <a class="btn btn-primary" href="/login/auth">Contacta con nosotros</a>
                 </div>
             </div>
@@ -419,7 +433,11 @@
                     </div>
                 </div>
                 <div class="row footer-copy">
-                    <p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a> </p>
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <a href="/">BADMASTERS 2021</a> </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
