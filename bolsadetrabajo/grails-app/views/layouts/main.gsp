@@ -11,14 +11,31 @@
             <g:layoutTitle default="BADMASTERS"/>
         </title>
         <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
-
+    <!--ESTILOS PARA ADMINISTRADOR-->
+    <sec:ifAllGranted roles="ROLE_ADMIN">
+            
         <asset:stylesheet src="application.css"/>
-
         <g:layoutHead/>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <asset:stylesheet src="principal.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    </head>
+    
+    </sec:ifAllGranted>
+    <!--FIN ESTILOS ADMIN-->
+        
+    <!--ESTILOS EMPRESA-->
+    <sec:ifAllGranted roles="ROLE_EMPRESA">
+        
+        <asset:stylesheet src="application.css"/>
+        <g:layoutHead/>
+        <asset:stylesheet src="nicepage.css"/>
+        <asset:stylesheet src="Cerrar-sesion.css"/>
+        <asset:javascript src="/empresa/jquery.js"/>
+        <asset:javascript src="/empresa/nicepage.js"/>
+        
+    </sec:ifAllGranted>
+    <!--FIN ESTILOS EMPRESA-->
+        </head>
     <body class="sb-nav-fixed">       
 <!--SECCION DE MENUS DE NAVEGACION -->
     <!--MENU PARA ADMINISTRADOR-->
@@ -28,16 +45,9 @@
             <a class="navbar-brand ps-3" href="/">BAD MASTERS</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Buscar" aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
             
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><sec:loggedInUserInfo field="username"/><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -53,44 +63,25 @@
     <!--FIN DE MENU PARA ADMINISTRADOR-->
         
     <!--MENU PARA EMPRESA-->
-    <sec:ifAllGranted roles="emp">
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-border u-custom-border-color u-custom-borders u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
-              <rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></symbol></defs>
-              </svg> 
-            </a>
+    <sec:ifAnyGranted roles="ROLE_EMPRESA">
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class = "navbar-nav mr-auto">
+                <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
             </div>
             <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Mi-Empresa.html" style="padding: 10px 14px;">Mi Empresa</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Cerrar-sesion.html" style="padding: 10px 14px;">Cerrar sesion</a></li>
+                <ul class="u-nav u-unstyled u-nav-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Mi Empresa</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
                 </ul>
-          </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mi-Empresa.html" style="padding: 10px 14px;">Mi Empresa</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Cerrar-sesion.html" style="padding: 10px 14px;">Cerrar sesion</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
-        </a>
-    </sec:ifAllGranted>
+    </sec:ifAnyGranted>
     <!--FIN MENU PARA EMPRESA-->
-        
+
+<!--SIDEBAR DE ADMINISTRADIR-->
+        <sec:ifAllGranted roles="ROLE_ADMIN">
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -101,7 +92,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interfaces</div>
+                            <div class="sb-sidenav-menu-heading">Administracion</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Usuarios
@@ -144,6 +135,71 @@
                                     </div>
                                 </nav>
                             </div>
+                            
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePersona" aria-expanded="false" aria-controls="collapsePersona">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Persona
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePersona" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/persona/index">Lista Persona</a>
+                                    <a class="nav-link" href="/certificacion/index/">Certificacion</a>
+                                    <a class="nav-link" href="/explaboral/index/">Experiencia laboral</a>
+                                    <a class="nav-link" href="/formacion/index/">Formacion</a>
+                                    <a class="nav-link" href="/habilidadTecnica/index">Habilidades técnicas</a>
+                                    <a class="nav-link" href="/idioma/index">Idioma</a>
+                                    <a class="nav-link" href="/idiomaPersona/index">Idioma persona</a>
+                                    <a class="nav-link" href="/logro/index/">Logro</a>
+                                    <a class="nav-link" href="/participacionEvento/index/">Participacion Evento</a>
+                                    <a class="nav-link" href="/personaRecomendacion/index/">Recomendacion</a>
+                                    <a class="nav-link" href="/publicacion/index/">publicacion</a>
+                                    <a class="nav-link" href="/redSocial/index/">Red social</a>
+                                    <a class="nav-link" href="/tipoEvento/index/">tipo de evento</a>
+                                </nav>
+                            </div>
+                            
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUbicacion" aria-expanded="false" aria-controls="collapseUbicacion">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ubicacion
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseUbicacion" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/pais/index">Pais</a>
+                                    <a class="nav-link" href="/departamento/index/">Departamento</a>
+                                    <a class="nav-link" href="/municipio/index/">Municipio</a>
+                                </nav>
+                            </div>
+                            
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEvaluacion" aria-expanded="false" aria-controls="collapseEvaluacion">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Evaluacion
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseEvaluacion" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/evaluacion/index">listar Evaluaciones</a>
+                                    <a class="nav-link" href="/preguntas/index/">Preguntas</a>
+                                    <a class="nav-link" href="/recordDeNotas/index/">Record de notas</a>
+                                    <a class="nav-link" href="/Respuestas/index/">Respuestas</a>
+                                    <a class="nav-link" href="/tipoEvaluacion/index/">Tipo de Evaluacion</a>
+                                </nav>
+                            </div>
+                            
+                            
+                            
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -161,8 +217,9 @@
                     </div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content">
-               
+        </sec:ifAllGranted>
+<!--FIN SIDEBAR DE ADMINISTRADOR-->
+            <div id="layoutSidenav_content">       
                 <main>
                     <div class="container">
                         <g:layoutBody/>
@@ -179,6 +236,8 @@
                 </footer>
             </div>
         </div>
+        
+
         <div id="spinner" class="spinner" style="display:none;">
             <g:message code="spinner.alt" default="Loading&hellip;"/>
         </div>

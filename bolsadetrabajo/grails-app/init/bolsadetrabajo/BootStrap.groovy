@@ -23,6 +23,18 @@ class BootStrap {
     	def administradorRole = new Role(authority: 'ROLE_ADMIN').save(flush:true)
     	new RoleGroupRole(roleGroup: administrador, role: administradorRole).save(flush: flush)
     	new UserRoleGroup(user: admin, roleGroup: administrador).save(flush: flush)
+        
+        def empresa = new User(username: 'empresa', password: 'empresa123').save(flush:true)
+    	def administradorEmpresa =  new RoleGroup(name: 'empresa').save(flush:true)
+    	def administradorEmpresaRole = new Role(authority: 'ROLE_EMPRESA').save(flush:true)
+    	new RoleGroupRole(roleGroup: administradorEmpresa, role: administradorEmpresaRole).save(flush: flush)
+    	new UserRoleGroup(user: empresa, roleGroup: administradorEmpresa).save(flush: flush)
+        
+        def postulante = new User(username: 'postulante', password: 'postulante123').save(flush:true)
+    	def administradorPostulante =  new RoleGroup(name: 'postulante').save(flush:true)
+    	def administradorPostulanteRole = new Role(authority: 'ROLE_POSTULANTE').save(flush:true)
+    	new RoleGroupRole(roleGroup: administradorPostulante, role: administradorPostulanteRole).save(flush: flush)
+    	new UserRoleGroup(user: postulante, roleGroup: administradorPostulante).save(flush: flush)
     }
     def destroy = {
     }
