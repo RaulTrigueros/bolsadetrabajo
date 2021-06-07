@@ -1,9 +1,9 @@
 package empresa
-//import Seguridad.user
+import seguridad.User
 
 class Empresa {
     Integer id
-    //User idUser
+    User id_user
     String nombreEmpresa
     String correoEmpresa
     String sitioWeb
