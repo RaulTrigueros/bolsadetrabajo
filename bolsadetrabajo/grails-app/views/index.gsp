@@ -52,7 +52,7 @@
                     <a class="btn btn-primary" href="/register">Registrate</a>
                     <!--Acceder como empresa-->
                    <sec:ifLoggedIn>
-                        <a class="btn btn-primary" href="/empresa/index">Ir a <sec:username/></a> 
+                        <a class="btn btn-primary" href="/empresa/listar">Ir a <sec:username/></a> 
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
                         <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
