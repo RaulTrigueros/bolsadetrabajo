@@ -5,7 +5,7 @@ import empresa.Empresa
 class PerfilPuesto {
     
     Integer id
-    Persona idPersona
+    //Persona idPersona
     Empresa idEmpresa
     String nombrePuestoTrabajo
     String descripcionPuesto

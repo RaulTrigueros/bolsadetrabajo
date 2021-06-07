@@ -1,6 +1,7 @@
 package seguridad
 import curriculum.*
 import empresa.*
+import Ubicacion.Pais
 import java.util.Date
 class Persona {
     
@@ -17,10 +18,10 @@ class Persona {
     String celular
     String correo
     
+    static belongsTo = [pais:Pais]
     
     static hasMany = [logros:Logro, redes:RedSocial, experienciasLaborales:Explaboral, certificaciones:Certificacion, idiomas:Idioma, 
                         recomendaciones:PersonaRecomendacion, publicacion:Publicacion]
-
     
     static constraints = {
         nombres (size:1..50, blank:false)
@@ -35,7 +36,6 @@ class Persona {
         telFijo (maxSize:9, nullable:true,blank:true)
         celular (maxSize:8, blank:false)
         correo (email:true)
-       
        
     }
      static mapping ={

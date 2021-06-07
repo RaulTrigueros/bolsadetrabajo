@@ -1,10 +1,13 @@
 package Ubicacion
-import Ubicacion.Pais
+import Ubicacion.*
 
 class Departamento {
     Integer id
     Pais idPais
     String nombreDepartamento
+    
+    static belongsTo =[pais:Pais]
+    static hasMany = [municipios:Municipio]
     
     static constraints = {
         nombreDepartamento maxZize:100
