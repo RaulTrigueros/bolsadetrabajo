@@ -16,8 +16,10 @@ class Empresa {
         sitioWeb maxZize:200
         descripcionEmpresa maxZize:200
     }
-    
     static mapping ={
         id column: 'id_emp'
+    }
+    String toString(){
+        nombreEmpresa
     }
 }

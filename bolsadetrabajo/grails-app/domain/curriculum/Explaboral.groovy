@@ -17,8 +17,21 @@ class Explaboral {
         contactoOrganizacion (blank:false, masSize:50)
         puestoTrabajo (blank:false, masSize:100)
         funcionesDesempenadas (blank:false, masSize:150)
+        fechaInicio (blank:false,validator: {
+            if (it?.compareTo(new Date()) > 0)
+                return false
+            return true
+        })
+        fechaFin (blank:false,validator: {
+            if (it?.compareTo(new Date()) > 0)
+                return false
+            return true
+        })
     }
      static mapping ={
         id column: 'id_xp'
+    }
+    String toString(){
+        organizacionDeExperiencia
     }
 }

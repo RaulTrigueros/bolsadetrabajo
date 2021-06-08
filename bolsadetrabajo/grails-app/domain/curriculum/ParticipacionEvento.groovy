@@ -12,8 +12,21 @@ class ParticipacionEvento {
     static constraints = {
         nombreEvento maxZize:100
         institucionAnfitriona maxZize:100
+        fechaInicio (blank:false,validator: {
+            if (it?.compareTo(new Date()) > 0)
+                return false
+            return true
+        })
+        fechaFin (blank:false,validator: {
+            if (it?.compareTo(new Date()) > 0)
+                return false
+            return true
+        })
     }
     static mapping ={
         id column: 'id_participacion'
+    }
+    String toString(){
+        nombreEvento
     }
 }

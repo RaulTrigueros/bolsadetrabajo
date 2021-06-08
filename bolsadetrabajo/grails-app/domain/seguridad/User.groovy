@@ -28,9 +28,11 @@ class User implements Serializable {
         username nullable: false, blank: false, unique: true
      
     }
-
     static mapping = {
 	    password column: '`password`'
             table 'usuario'
+    }
+    String toString(){
+        username
     }
 }

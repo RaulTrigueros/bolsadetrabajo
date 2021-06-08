@@ -11,4 +11,7 @@ class TipoEvaluacion {
     static mapping ={
         id column: 'id_tipo_eval'
     }
+    String toString(){
+        nombre
+    }
 }

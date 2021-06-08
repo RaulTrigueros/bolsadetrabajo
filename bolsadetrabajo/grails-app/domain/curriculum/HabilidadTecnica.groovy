@@ -13,4 +13,7 @@ class HabilidadTecnica {
     static mapping ={
         id column: 'id_habilidad'
     }
+    String toString(){
+        nombreHabilidad
+    }
 }

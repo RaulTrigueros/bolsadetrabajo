@@ -20,4 +20,7 @@ class PersonaRecomendacion {
     static mapping ={
         id column: 'id_recom'
     }
+    String toString(){
+        nombreRecomendacion
+    }
 }

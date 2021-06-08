@@ -3,19 +3,28 @@ import seguridad.Persona
 
 class Logro {
     
-    String tipo_logro
-    String nombre_logro
-    Date fecha_logro
+    String tipoLogro
+    String nombreLogro
+    Date fechaLogro
 
     static belongsTo = [persona:Persona]
     
     static constraints = {
-     tipo_logro (inList:["Condecoración","Concurso", "Meta"]) 
-     nombre_logro (size:1..50, blank:false)
-     fecha_logro (blank:false)
+     tipoLogro (inList:["Condecoración","Concurso", "Meta"]) 
+     nombreLogro (size:1..50, blank:false)
+     fechaLogro (blank:false,
+            validator: {
+                if (it?.compareTo(new Date()) > 0)
+                    return false
+                return true
+            })
+        
     }
     
      static mapping ={
         id column: 'id_logro'
+    }
+    String toString(){
+        nombreLogro
     }
 }
