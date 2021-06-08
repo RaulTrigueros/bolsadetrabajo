@@ -56,21 +56,21 @@
     <!--MENU PARA ADMINISTRADOR-->
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/">BAD MASTERS</a>
+            <a class="navbar-brand ps-3" href="/">BAD MASTERS </a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            
+             <div class="float-md-left"><a><g:formatDate date="${new Date()}" type="date" style="LONG" /></a></div>
             <!-- Navbar-->
             <ul class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i><g:formatDate date="${new Date()}" type="date" style="LONG"/></i>
-                        <i><sec:loggedInUserInfo field="username"/></i>
+                        <i>
+                           <sec:loggedInUserInfo field="username"/>
+                        </i>
                         <i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Ajustes</a></li>
-                        <li><a class="dropdown-item" href="#!">Registro de actividades</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
                     </ul>
@@ -122,7 +122,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menú</div>
-                            <a class="nav-link" href="/main">
+                            <a class="nav-link" href="/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
