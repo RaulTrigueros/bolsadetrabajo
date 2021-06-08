@@ -23,19 +23,34 @@
     </sec:ifAllGranted>
     <!--FIN ESTILOS ADMIN-->
         
-    <!--ESTILOS EMPRESA-->
-    <sec:ifAllGranted roles="ROLE_EMPRESA">
-        
+    <!--ESTILOS EMPRESA Y POSTULANTE-->
+    <sec:ifAnyGranted roles="ROLE_EMPRESA,ROLE_POSTULANTE">
         <asset:stylesheet src="application.css"/>
         <g:layoutHead/>
         <asset:stylesheet src="nicepage.css"/>
         <asset:stylesheet src="Cerrar-sesion.css"/>
         <asset:javascript src="/empresa/jquery.js"/>
         <asset:javascript src="/empresa/nicepage.js"/>
-        
+    </sec:ifAnyGranted>
+    <!--FIN ESTILOS EMPRESA Y POSTULANTE-->
+    <!--ESTILOS POSTULANTE-->
+    <sec:ifAllGranted roles="ROLE_POSTULANTE">
+        <asset:stylesheet src="normalize.css"/>
+        <asset:stylesheet src="font-awesome.min.css"/>
+        <asset:stylesheet src="fontello.css"/>
+        <asset:stylesheet src="animate.css"/>      
+        <asset:stylesheet src="pbootstrap.min.cs"/> 
+        <asset:stylesheet src="owl.carousel.css"/>
+        <asset:stylesheet src="owl.theme.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="stylePortal.css"/>
+        <asset:stylesheet src="responsive.css"/>
+        <asset:javascript src="/vendor/modernizr-2.6.2.min.js"/>
+        <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script> 
     </sec:ifAllGranted>
-    <!--FIN ESTILOS EMPRESA-->
-        </head>
+    <!--FIN ESTILOS PARA POSTULANTE-->
+    </head>
     <body class="sb-nav-fixed">       
 <!--SECCION DE MENUS DE NAVEGACION -->
     <!--MENU PARA ADMINISTRADOR-->
@@ -79,6 +94,22 @@
         </nav>
     </sec:ifAnyGranted>
     <!--FIN MENU PARA EMPRESA-->
+                    
+    <!--MENU PARA POSTULANTE-->
+    <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class = "navbar-nav mr-auto">
+                <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul class="u-nav u-unstyled u-nav-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Area Personal  (<sec:username/>)</a></li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
+                </ul>
+          </div>
+        </nav>
+    </sec:ifAnyGranted>
+    <!--FIN MENU POSTULANTE-->
 
 <!--SIDEBAR DE ADMINISTRADIR-->
         <sec:ifAllGranted roles="ROLE_ADMIN">
@@ -100,7 +131,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/user/index">Lista Usuarios</a>
+                                    <a class="nav-link" href="/user/listar">Lista Usuarios</a>
                                     <a class="nav-link" href="/userRole/index/">Roles</a>
                                 </nav>
                             </div>
