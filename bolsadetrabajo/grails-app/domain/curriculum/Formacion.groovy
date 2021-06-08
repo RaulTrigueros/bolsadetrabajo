@@ -2,7 +2,7 @@ package curriculum
 import seguridad.Persona
 
 class Formacion {
-    Integer id
+    
     Date fechaInicio
     Date fechaFin
     String tipoFormacion
@@ -17,6 +17,6 @@ class Formacion {
         institucionDeFormacion maxZize:200
     }
     static mapping ={
-        id column: 'id_formacion'
+        id column: 'id_form'
     }
 }

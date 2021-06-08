@@ -2,7 +2,7 @@ package curriculum
 import seguridad.Persona
 
 class Certificacion {
-    Persona idPersona;
+    
     String nombreCertificacion;
     String codigoCertificacion;
     Date fechaInicio;

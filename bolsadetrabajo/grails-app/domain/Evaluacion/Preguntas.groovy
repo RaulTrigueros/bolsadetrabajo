@@ -2,13 +2,14 @@ package Evaluacion
 import Evaluacion.Evaluacion
 
 class Preguntas {
-    Integer id
-    Evaluacion idEvaluacion
+   
     String enunciado
     String respSeleccionada
     String respCorrecta
     Float ponderacion
     
+    static belongsTo =[evaluacion:Evaluacion]
+    static hasMany =[respuestas:Respuestas]
     static constraints = {
         enunciado maxZize:200
         respSeleccionada maxZize:200
@@ -16,6 +17,6 @@ class Preguntas {
     }
     
     static mapping ={
-        id column: 'id_pregunta'
+        id column: 'id_preg'
     }
 }

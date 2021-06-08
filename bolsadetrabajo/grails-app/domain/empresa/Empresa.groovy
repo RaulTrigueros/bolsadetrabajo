@@ -1,14 +1,15 @@
 package empresa
-//import Seguridad.user
+import seguridad.User
 
-class Empresa {
-    Integer id
-    //User idUser
+class Empresa { 
+    
     String nombreEmpresa
     String correoEmpresa
     String sitioWeb
     String descripcionEmpresa
     
+    static belongsTo = [usuarios:User]
+    static hasMany=[perfilPuesto:PerfilPuesto]
     static constraints = {
         nombreEmpresa maxZize:200
         correoEmpresa email:true
@@ -17,6 +18,6 @@ class Empresa {
     }
     
     static mapping ={
-        id column: 'id_empresa'
+        id column: 'id_emp'
     }
 }

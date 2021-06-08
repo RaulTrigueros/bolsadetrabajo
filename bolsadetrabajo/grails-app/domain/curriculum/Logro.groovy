@@ -3,7 +3,6 @@ import seguridad.Persona
 
 class Logro {
     
-    Integer id
     String tipo_logro
     String nombre_logro
     Date fecha_logro

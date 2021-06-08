@@ -3,12 +3,10 @@ import seguridad.Persona
 import Evaluacion.Evaluacion
 
 class RecordDeNotas {
-    Integer id
-    Persona idPersona
-    Evaluacion idEvaluacion
+    
     Float nota
     Boolean estado
-    
+    static belongsTo=[evaluacion:Evaluacion, persona:Persona]
     static constraints = {
     }
     

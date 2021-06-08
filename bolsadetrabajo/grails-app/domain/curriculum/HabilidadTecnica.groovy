@@ -2,11 +2,10 @@ package curriculum
 import seguridad.Persona
 
 class HabilidadTecnica {
-    Integer id
-    Persona idPersona
+    
     String tipoHabilidad
     String nombreHabilidad
-    
+    static belongsTo=[persona:Persona]
     static constraints = {
         tipoHabilidad maxZize:200
         nombreHabilidad maxZize:200
