@@ -5,6 +5,7 @@ import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
 import seguridad.Persona
 import seguridad.Role
+import empresa.Empresa
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
@@ -20,13 +21,11 @@ class User implements Serializable {
     boolean accountLocked
     boolean passwordExpired
     
-    static belongsTo = [persona:Persona]
+    static belongsTo = [persona:Persona, roles:Role]
 
     Set<RoleGroup> getAuthorities() {
         (UserRoleGroup.findAllByUser(this) as List<UserRoleGroup>)*.roleGroup as Set<RoleGroup>
     }
-
-    static belongsTo = [Role]
     static hasMany = [empresas:Empresa]
 
     static constraints = {
