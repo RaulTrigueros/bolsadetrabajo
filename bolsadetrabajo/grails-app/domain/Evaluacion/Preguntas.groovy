@@ -18,6 +18,7 @@ class Preguntas {
     
     static mapping ={
         id column: 'id_preg'
+        version false
     }
     
 }

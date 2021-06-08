@@ -11,6 +11,7 @@ class Municipio {
     
     static mapping ={
         id column: 'id_muni'
+        version false
     }
     String toString(){
         nombreMunicipio

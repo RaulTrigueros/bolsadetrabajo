@@ -19,6 +19,7 @@ class PersonaRecomendacion {
     
     static mapping ={
         id column: 'id_recom'
+        version false
     }
     String toString(){
         nombreRecomendacion

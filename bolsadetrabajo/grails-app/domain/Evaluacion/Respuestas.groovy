@@ -10,5 +10,6 @@ class Respuestas {
     }
     static mapping ={
         id column: 'id_resp'
+        version false
     }
 }

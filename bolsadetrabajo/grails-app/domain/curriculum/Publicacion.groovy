@@ -22,6 +22,7 @@ class Publicacion {
     }
     static mapping ={
         id column: 'id_publicaciones'
+        version false
     }
     String toString(){
         edicion

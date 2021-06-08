@@ -27,6 +27,7 @@ class PerfilPuesto {
     }
     static mapping ={
         id column: 'id_perfil_puesto'
+        version false
     }
     String toString(){
         nombrePuestoTrabajo

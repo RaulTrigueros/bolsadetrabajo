@@ -32,6 +32,7 @@ class Certificacion {
     }
     static mapping ={
         id column: 'id_cer'
+        version false
     }
     String toString(){
         nombreCertificacion

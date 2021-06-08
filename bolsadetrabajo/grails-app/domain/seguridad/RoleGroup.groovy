@@ -23,5 +23,6 @@ class RoleGroup implements Serializable {
 
 	static mapping = {
 		cache true
+                version false
 	}
 }

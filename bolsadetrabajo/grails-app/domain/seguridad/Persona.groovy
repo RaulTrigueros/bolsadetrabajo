@@ -21,7 +21,7 @@ class Persona {
     static belongsTo = [pais:Pais]
  
     static hasMany = [logros:Logro, redes:RedSocial, experienciasLaborales:Explaboral, certificaciones:Certificacion, idiomas:Idioma, 
-                        recomendaciones:PersonaRecomendacion, publicacion:Publicacion, usuarios:User]
+                        recomendaciones:PersonaRecomendacion, publicacion:Publicacion/*, usuarios:User*/]
     
     static constraints = {
         nombres (size:1..50, blank:false)
@@ -45,6 +45,7 @@ class Persona {
     }
      static mapping ={
         id column: 'id_per'
+        version false
     }
     String toString(){
        "$nombres $apellidos" //aparecen concatenados los nombres y apellidos 

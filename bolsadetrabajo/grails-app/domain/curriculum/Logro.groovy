@@ -17,12 +17,11 @@ class Logro {
                 if (it?.compareTo(new Date()) > 0)
                     return false
                 return true
-            })
-        
+            }) 
     }
-    
      static mapping ={
         id column: 'id_logro'
+        version false
     }
     String toString(){
         nombreLogro
