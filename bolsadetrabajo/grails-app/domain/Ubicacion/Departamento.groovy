@@ -14,4 +14,7 @@ class Departamento {
     static mapping ={
         id column: 'id_depto'
     }
+    String toString(){
+        nombreDepartamento
+    }
 }

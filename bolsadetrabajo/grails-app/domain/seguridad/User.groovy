@@ -32,9 +32,11 @@ class User implements Serializable {
         persona  nullable: true, blank: true, unique:true
      
     }
-
     static mapping = {
 	    password column: '`password`'
             table 'usuario'
+    }
+    String toString(){
+        username
     }
 }

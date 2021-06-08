@@ -3,10 +3,7 @@ import seguridad.Persona
 import empresa.Empresa
 
 class PerfilPuesto {
-    
-    Integer id
-    //Persona idPersona
-    
+  
     String nombrePuestoTrabajo
     String descripcionPuesto
     String conocimientosNecesarios
@@ -30,5 +27,8 @@ class PerfilPuesto {
     }
     static mapping ={
         id column: 'id_perfil_puesto'
+    }
+    String toString(){
+        nombrePuestoTrabajo
     }
 }

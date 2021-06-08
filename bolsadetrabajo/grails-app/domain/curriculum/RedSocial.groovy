@@ -14,4 +14,8 @@ class RedSocial {
     static mapping ={
         id column:'id_red'
     }
+    String toString(){
+        "Linkedin:$linkedin, Facebook:$facebook, Twitter:$twitter"
+    }
+    
 }

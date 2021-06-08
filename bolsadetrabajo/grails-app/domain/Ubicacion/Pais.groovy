@@ -12,4 +12,7 @@ class Pais {
     static mapping ={
         id column: 'id_pais'
     }
+    String toString (){
+        nombrePais
+    }
 }

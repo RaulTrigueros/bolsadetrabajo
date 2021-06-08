@@ -11,4 +11,7 @@ class IdiomaPersona {
     static mapping ={
         id column: 'id_idioma_persona'
     }
+    String toString(){
+        nivel
+    }
 }

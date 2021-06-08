@@ -27,7 +27,12 @@ class Persona {
         nombres (size:1..50, blank:false)
         apellidos (size:1..50, blank:false)
         genero (inList:["Masculino", "Femenino"], blank:false)
-        fechaNac (blank:false)
+        fechaNac (blank:false,
+            validator: {
+                if (it?.compareTo(new Date()) > 0)
+                return false
+                return true
+            })
         tipoDocumento (inList:["DUI","Pasaporte"])
         numDocumento (size:8..9, unique:true, blank:false) 
         NIT (maxSize: 14, unique:true, blank:false)
@@ -40,5 +45,8 @@ class Persona {
     }
      static mapping ={
         id column: 'id_per'
+    }
+    String toString(){
+       "$nombres $apellidos" //aparecen concatenados los nombres y apellidos 
     }
 }
