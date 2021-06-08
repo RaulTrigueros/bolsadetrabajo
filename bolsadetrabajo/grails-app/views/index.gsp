@@ -43,20 +43,30 @@
                 <div class="button navbar-right"> 
                      <!--Acceder como postulante-->
                     <sec:ifLoggedIn>
+                        <sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_POSTULANTE">
                         <a class="btn btn-primary" href="/user/index">Ir a <sec:username/></a> 
+                        <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
+                        </sec:ifAnyGranted>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
-                        <a class="btn btn-primary" href="/login/auth">Iniciar Candidato</a>
+                        <a class="btn btn-primary" href="/login/auth">Acceder</a>
+                        <a class="btn btn-primary" href="/register">Registrar Candidato</a>
                     </sec:ifNotLoggedIn>
                      <!--Registrar postulante-->
-                    <a class="btn btn-primary" href="/register">Registrate</a>
+                                        
                     <!--Acceder como empresa-->
-                   <sec:ifLoggedIn>
-                        <a class="btn btn-primary" href="/empresa/index">Ir a <sec:username/></a> 
-                    </sec:ifLoggedIn>
-                    <sec:ifNotLoggedIn>
-                        <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
-                    </sec:ifNotLoggedIn>
+                        <sec:ifLoggedIn>
+                             <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                             <a class="btn btn-primary" href="/empresa/index">Ir a <sec:username/></a> 
+                             <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
+                             </sec:ifAnyGranted>
+                        </sec:ifLoggedIn>
+                    
+                        <sec:ifNotLoggedIn>
+                            <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
+                            <a class="btn btn-primary" href="/register">Registrar como empresa</a>
+                        </sec:ifNotLoggedIn>
+                    
                      <!--Contactar servicio de plataforma como empresa-->
                     <a class="btn btn-primary" href="/login/auth">Contacta con nosotros</a>
                 </div>

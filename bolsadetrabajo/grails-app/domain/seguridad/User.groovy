@@ -20,14 +20,14 @@ class User implements Serializable {
     boolean accountLocked
     boolean passwordExpired
     
-   // static belongsTo = [persona:Persona]
+    static belongsTo = [persona:Persona]
 
     Set<RoleGroup> getAuthorities() {
         (UserRoleGroup.findAllByUser(this) as List<UserRoleGroup>)*.roleGroup as Set<RoleGroup>
     }
 
     static belongsTo = [Role]
-    static hasMany = [personas:Persona, empresas:Empresa]
+    static hasMany = [empresas:Empresa]
 
     static constraints = {
         password nullable: false, blank: false, password: true
