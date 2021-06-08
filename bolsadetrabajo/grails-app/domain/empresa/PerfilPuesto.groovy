@@ -6,7 +6,7 @@ class PerfilPuesto {
     
     Integer id
     //Persona idPersona
-    Empresa idEmpresa
+    
     String nombrePuestoTrabajo
     String descripcionPuesto
     String conocimientosNecesarios
@@ -16,7 +16,7 @@ class PerfilPuesto {
     Float salarioMin
     Float salarioMax
     String ubicacionGeografica
-    
+    static belongsTo=[empresa:Empresa]
     static constraints = {
         nombrePuestoTrabajo (blank:false, masSize:200)
         descripcionPuesto (blank:false, masSize:200)

@@ -2,11 +2,9 @@ package curriculum
 import seguridad.Persona
 import curriculum.Idioma
 class IdiomaPersona {
-    Integer id
-    Idioma id_idioma
-    Persona id_persona
-    String nivel
     
+    String nivel
+    static belongsTo=[persona:Persona, idioma:Idioma]
     static constraints = {
         nivel (inList:["Basico", "Intermedio", "Avanzado"])
     }

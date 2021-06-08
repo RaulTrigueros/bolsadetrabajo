@@ -1,7 +1,6 @@
 package Ubicacion
 
 class Pais {
-    Integer id
     String nombrePais
     String continente
     

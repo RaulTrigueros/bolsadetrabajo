@@ -3,6 +3,7 @@ package seguridad
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
+import empresa.Empresa
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
@@ -21,7 +22,7 @@ class User implements Serializable {
     Set<RoleGroup> getAuthorities() {
         (UserRoleGroup.findAllByUser(this) as List<UserRoleGroup>)*.roleGroup as Set<RoleGroup>
     }
-
+    static hasMany = [personas:Persona, empresas:Empresa]
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true

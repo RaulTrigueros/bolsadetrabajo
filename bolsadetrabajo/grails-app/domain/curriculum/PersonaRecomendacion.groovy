@@ -2,9 +2,7 @@ package curriculum
 import seguridad.Persona
 
 class PersonaRecomendacion {
-    
-    Integer id
-    Persona idPersona
+
     String nombreRecomendacion
     String telefonoRecomendador
     String correoRecomendador

@@ -3,9 +3,9 @@ import seguridad.Persona
 
 class Idioma {
     
-    Integer id
+   
     String nombreIdioma
-    
+    static hasMany=[idiomaPersona:IdiomaPersona]
     static constraints = {        
         nombreIdioma maxSize:20
     }

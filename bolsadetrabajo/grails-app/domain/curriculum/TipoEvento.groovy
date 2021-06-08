@@ -1,9 +1,9 @@
 package curriculum
 
 class TipoEvento {
-    Integer id
+   
     String nombreTipoEvento
-    
+    static hasMany=[participacionEvento:ParticipacionEvento]
     static constraints = {
         nombreTipoEvento maxZize:100
     }

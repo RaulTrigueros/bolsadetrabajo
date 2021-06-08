@@ -2,8 +2,6 @@ package Ubicacion
 import Ubicacion.*
 
 class Municipio {
-    Integer id
-    Departamento idDepartamento
     String nombreMunicipio
     
     static belongsTo = [departamentos:Departamento]
@@ -12,6 +10,6 @@ class Municipio {
     }
     
     static mapping ={
-        id column: 'id_municipio'
+        id column: 'id_muni'
     }
 }
