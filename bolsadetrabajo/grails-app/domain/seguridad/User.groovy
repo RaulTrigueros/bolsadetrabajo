@@ -22,6 +22,7 @@ class User implements Serializable {
     Set<RoleGroup> getAuthorities() {
         (UserRoleGroup.findAllByUser(this) as List<UserRoleGroup>)*.roleGroup as Set<RoleGroup>
     }
+    static belongsTo = [Role]
     static hasMany = [personas:Persona, empresas:Empresa]
     static constraints = {
         password nullable: false, blank: false, password: true

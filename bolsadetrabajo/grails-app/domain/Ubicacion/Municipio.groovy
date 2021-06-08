@@ -4,7 +4,7 @@ import Ubicacion.*
 class Municipio {
     String nombreMunicipio
     
-    static belongsTo = [departamentos:Departamento]
+    static belongsTo = [departaento:Departamento]
     static constraints = {
         nombreMunicipio maxZize:100
     }

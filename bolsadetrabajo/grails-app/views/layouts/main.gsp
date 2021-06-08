@@ -217,6 +217,17 @@
                                     <a class="nav-link" href="/tipoEvaluacion/index/">Tipo de Evaluacion</a>
                                 </nav>
                             </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmpresa" aria-expanded="false" aria-controls="collapseEmpresa">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Empresa
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseEmpresa" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/empresa/listar">Empresa</a>
+                                    <a class="nav-link" href="/perfilPuesto/index">Perfil Puesto</a>      
+                                </nav>
+                            </div>
 
                         </div>
                     </div>
