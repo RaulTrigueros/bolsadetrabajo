@@ -10,6 +10,7 @@ class IdiomaPersona {
     }
     static mapping ={
         id column: 'id_idioma_persona'
+        version false
     }
     String toString(){
         nivel

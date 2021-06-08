@@ -14,6 +14,7 @@ class Evaluacion {
     
     static mapping ={
         id column: 'id_eval'
+        version false
     }
     
     String toString(){

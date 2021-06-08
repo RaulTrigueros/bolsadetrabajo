@@ -9,6 +9,7 @@ class TipoEvento {
     }
     static mapping ={
         id column: 'id_evento'
+        version false
     }
     String toString(){
         nombreTipoEvento

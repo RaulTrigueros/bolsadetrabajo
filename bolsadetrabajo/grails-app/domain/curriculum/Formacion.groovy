@@ -26,6 +26,7 @@ class Formacion {
     }
     static mapping ={
         id column: 'id_form'
+        version false
     }
     String toString(){
         nombreFormacion

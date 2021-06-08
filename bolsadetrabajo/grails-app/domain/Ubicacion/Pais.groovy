@@ -11,6 +11,7 @@ class Pais {
     }
     static mapping ={
         id column: 'id_pais'
+        version false
     }
     String toString (){
         nombrePais

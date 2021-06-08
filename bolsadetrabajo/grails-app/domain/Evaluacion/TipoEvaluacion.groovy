@@ -10,6 +10,7 @@ class TipoEvaluacion {
     
     static mapping ={
         id column: 'id_tipo_eval'
+        version false
     }
     String toString(){
         nombre

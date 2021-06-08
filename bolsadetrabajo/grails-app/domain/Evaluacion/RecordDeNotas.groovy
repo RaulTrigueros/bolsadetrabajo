@@ -12,5 +12,6 @@ class RecordDeNotas {
     
     static mapping ={
         id column: 'id_record'
+        version false
     }
 }

@@ -30,6 +30,7 @@ class Explaboral {
     }
      static mapping ={
         id column: 'id_xp'
+        version false
     }
     String toString(){
         organizacionDeExperiencia
