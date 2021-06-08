@@ -22,8 +22,7 @@
     <body class="sb-nav-fixed">       
 <!--SECCION DE MENUS DE NAVEGACION -->
     <!--MENU PARA ADMINISTRADOR-->
-    <sec:ifAllGranted roles="ROLE_ADMIN">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="/">BAD MASTERS</a>
             <!-- Sidebar Toggle-->
@@ -39,7 +38,11 @@
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><sec:loggedInUserInfo field="username"/><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i><g:formatDate date="${new Date()}" type="date" style="LONG"/></i>
+                        <i><sec:loggedInUserInfo field="username"/></i>
+                        <i class="fas fa-user fa-fw"></i>
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Ajustes</a></li>
                         <li><a class="dropdown-item" href="#!">Registro de actividades</a></li>
@@ -49,7 +52,7 @@
                 </li>
             </ul>
         </nav>
-    </sec:ifAllGranted>
+   
     <!--FIN DE MENU PARA ADMINISTRADOR-->
         
     <!--MENU PARA EMPRESA-->

@@ -9,8 +9,7 @@ grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/',                     access: ['permitAll']],
     [pattern: '/error',                access: ['permitAll']],
-    [pattern: '/index/',                access: ['permitAll']],
-    [pattern: '/index.gsp',            access: ['ROLE_ADMIN']],
+    [pattern: '/index/',               access: ['permitAll']],
     [pattern: '/shutdown',             access: ['permitAll']],
     [pattern: '/assets/**',            access: ['permitAll']],
     [pattern: '/**/js/**',             access: ['permitAll']],
@@ -19,8 +18,6 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/**/favicon.ico',       access: ['permitAll']],
     [pattern: '/login/**',             access: ['permitAll']],
     [pattern: '/logout/**',            access: ['permitAll']],
-    [pattern: '/dbconsole/**',         access: ['permitAll']],
-    [pattern: '/console/**', 	       access: ['permitAll']],
     [pattern: '/user/**', 	       access: ['ROLE_ADMIN']],
     [pattern: '/userRole/**', 	       access: ['ROLE_ADMIN']],
     [pattern: '/roles/', 	       access: ['ROLE_ADMIN']],
@@ -30,7 +27,6 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/persona/**',           access: ['permitAll']],
     [pattern: '/publicaciones/**',     access: ['permitAll']],
     [pattern: '/logro/**',             access: ['ROLE_ADMIN']],
-    [pattern: '/idioma/**', 	       access: ['permitAll']],
     [pattern: '/explaboral/**',        access: ['permitAll']],
     [pattern: '/perfilPuesto/**',      access: ['permitAll']],
     [pattern: '/certificacion/**',     access: ['permitAll']],
@@ -54,9 +50,9 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/login/auth'
-
 grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
 //grails.plugin.springsecurity.securityConfigType = "Annotation"
 
+grails.plugins.springsecurity.userLookup.usernamePropertyName = 'e-mail'
