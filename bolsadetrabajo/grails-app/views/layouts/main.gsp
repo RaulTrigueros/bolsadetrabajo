@@ -54,6 +54,7 @@
     <body class="sb-nav-fixed">       
 <!--SECCION DE MENUS DE NAVEGACION -->
     <!--MENU PARA ADMINISTRADOR-->
+        <sec:ifAnyGranted roles="ROLE_ADMIN">
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="/">BAD MASTERS </a>
@@ -77,7 +78,7 @@
                 </li>
             </ul>
         </nav>
-   
+    </sec:ifAnyGranted>
     <!--FIN DE MENU PARA ADMINISTRADOR-->
         
     <!--MENU PARA EMPRESA-->
@@ -86,31 +87,56 @@
             <div class = "navbar-nav mr-auto">
                 <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
             </div>
+            
+            <div class="float-md-left"><a><g:formatDate date="${new Date()}" type="date" style="LONG" /></a></div>
             <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Mi Empresa</a></li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a></li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a></li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
-                </ul>
-          </div>
+                <ul class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px 14px;">
+                        <i>
+                           <sec:loggedInUserInfo field="username"/>
+                        </i>
+                        <i class="fas fa-user fa-fw"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Mi Empresa</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
+        
     </sec:ifAnyGranted>
     <!--FIN MENU PARA EMPRESA-->
                     
     <!--MENU PARA POSTULANTE-->
     <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+        
         <nav class="navbar navbar-light bg-light static-top">
             <div class = "navbar-nav mr-auto">
                 <a class="navbar-brand" href="/"><asset:image src="BADLogo.png" alt="BadMaster Logo"/></a>
             </div>
+            
+            <div class="float-md-left"><a><g:formatDate date="${new Date()}" type="date" style="LONG" /></a></div>
             <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Area Personal  (<sec:username/>)</a></li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
-                </ul>
-          </div>
+                <ul class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 10px 14px;">
+                        <i>
+                           <sec:loggedInUserInfo field="username"/>
+                        </i>
+                        
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
+        
     </sec:ifAnyGranted>
     <!--FIN MENU POSTULANTE-->
 
