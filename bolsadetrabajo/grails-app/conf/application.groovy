@@ -32,6 +32,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/roles/',                    access: ['ROLE_ADMIN']],
     [pattern: '/crearRol/**',               access: ['ROLE_ADMIN']],
     
+    [pattern: '/emailSender/**', access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
@@ -56,7 +57,9 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/municipio/**',              access: ['ROLE_ADMIN']],
     [pattern: '/pais/**',                   access: ['ROLE_ADMIN']],
     
+    
     [pattern: '/password/**',               access: ['permitAll']],
+    
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

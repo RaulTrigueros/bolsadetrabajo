@@ -9,6 +9,7 @@ class Persona {
     String apellidos
     String genero
     Date fechaNac
+    Integer edad
     String tipoDocumento
     String numDocumento
     String NIT
@@ -33,6 +34,7 @@ class Persona {
                 return false
                 return true
             })
+        edad (nullable:true)
         tipoDocumento (inList:["DUI","Pasaporte"])
         numDocumento (size:8..9, unique:true, blank:false) 
         NIT (maxSize: 14, unique:true, blank:false)
