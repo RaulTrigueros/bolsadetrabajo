@@ -63,8 +63,8 @@
                         </sec:ifLoggedIn>
                     
                         <sec:ifNotLoggedIn>
-                            <a class="btn btn-primary" href="/login/auth">Iniciar Empresa</a>
-                            <a class="btn btn-primary" href="/register">Registrar como empresa</a>
+                            <a class="btn btn-primary" href="/loginEmp">Iniciar Empresa</a>
+                            <a class="btn btn-primary" href="/registerEmp">Registrar como empresa</a>
                         </sec:ifNotLoggedIn>
                     
                      <!--Contactar servicio de plataforma como empresa-->
