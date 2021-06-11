@@ -22,11 +22,11 @@
     
     </sec:ifAllGranted>
     
-        <asset:stylesheet src="application.css"/>
+     <asset:stylesheet src="application.css"/>
         <!--<g:layoutHead/>-->
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <asset:stylesheet src="principal.css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script> 
     <!--FIN ESTILOS ADMIN-->
         
     <!--ESTILOS EMPRESA Y POSTULANTE-->
@@ -159,7 +159,6 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/emailSender/cambioRol" style="padding: 10px 14px;">Solicitar un nuevo Rol</a></li>
 
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/persona/show/${usu}" style="padding: 10px 14px;">Area personal</a></li>
