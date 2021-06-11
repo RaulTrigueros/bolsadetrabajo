@@ -12,7 +12,7 @@
         <section class=" u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1280" data-image-height="853" id="sec-827c">
             <div class=" u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <h1 class="u-text u-text-1">BIENVENIDO</h1>
-                <p class="u-text u-text-2">Sed in tincidunt ante. Curabitur venenatis, dui eget aliquam placerat, dui sem cursus urna, non sagittis erat ante quis nulla. </p>
+                <p class="u-text u-text-2">Bienvenido a nuestro sistema de bolsa de trabajo, sera un placer atenderte </p>
             <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
             
@@ -46,9 +46,19 @@
               </div>
             </div>
             </a>
+            <a href="/emailSender/index">
+            <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-4 u-repeater-item u-shape-round u-video-cover u-list-item-3" data-href="https://nicepage.com/k/adult-website-templates">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-3">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 128 128" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4ebb"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 128 128" id="svg-4ebb"><polygon points="128 3 17 3 17 24 25 24 25 11 120 11 120 24 111 24 111 32 120 32 120 95 111 95 111 103 128 103"></polygon><path d="m25 24h-25v100h111v-100h-86zm78 92h-95v-63h95v63zm0-71h-95v-13h95v13z"></path><path d="m46 74v21h-21v-21h21m8-8h-37v37h37v-37z"></path><rect x="62" y="66" width="32" height="8"></rect><rect x="62" y="81" width="32" height="8"></rect><rect x="62" y="95" width="32" height="8"></rect></svg>
+          </span>
+                <h4 class="u-text u-text-5">Serivicio de mensajeria</h4>
+              </div>
+            </div>
+            </a>
           </div>
         </div>
-        <a href="" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
+        <a href="/emailSender/contacto" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
       </div>
     </section>
 

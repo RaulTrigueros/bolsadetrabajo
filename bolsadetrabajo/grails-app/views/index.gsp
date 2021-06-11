@@ -64,7 +64,7 @@
                     </sec:ifNotLoggedIn>
                                          
                      <!--Contactar servicio de plataforma como empresa-->
-                    <a class="btn btn-primary" href="/login/auth">Contacta con nosotros</a>
+                    <a class="btn btn-primary" href="/emailSender/contacto">Contacta con nosotros</a>
                 </div>
             </div>
         </nav>

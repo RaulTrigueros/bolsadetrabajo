@@ -129,6 +129,7 @@
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/empresa/show/${emp}" style="padding: 10px 14px;">Mi Empresa:</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/emailSender/cambioRol" style="padding: 10px 14px;">Solicitar un nuevo Rol</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
                     </ul>
                 </li>
@@ -158,10 +159,14 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/emailSender/cambioRol" style="padding: 10px 14px;">Solicitar un nuevo Rol</a></li>
+
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/persona/show/${usu}" style="padding: 10px 14px;">Area personal</a></li>
 
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
-                    </ul>
+                                           
+                    </ul> 
                 </li>
             </ul>
         </nav>

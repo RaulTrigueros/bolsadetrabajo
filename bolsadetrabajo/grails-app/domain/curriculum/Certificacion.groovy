@@ -21,11 +21,7 @@ class Certificacion {
                 return false
             return true
         })
-     fechaFin (blank:false,validator: {
-            if (it?.compareTo(new Date()) > $fechaInicio)
-                return false
-            return true
-        })
+     fechaFin (blank:false)
      tipoCertificacion (size:1..50, blank:false)
      institucionDeCertificacion (size:1..50, blank:false)
         
