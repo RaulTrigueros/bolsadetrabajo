@@ -35,20 +35,22 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/role/**',                   access: ['ROLE_ADMIN']],
     [pattern: '/crearRol/**',               access: ['ROLE_ADMIN']],
     
-    [pattern: '/emailSender/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/formacion/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    
+    [pattern: '/emailSender/**', access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/formacion/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/idioma/**',                 access: ['ROLE_ADMIN',]],
-    [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/publicacion/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/redSocial/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
-    [pattern: '/tipoEvento/**', 	    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/telefono/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/publicacion/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/redSocial/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/tipoEvento/**', 	    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/empresa/**',                access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
     [pattern: '/perfilPuesto/**', 	    access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
     [pattern: '/evaluacion/**', 	    access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
@@ -61,7 +63,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/pais/**',                   access: ['ROLE_ADMIN']],
         
     [pattern: '/password/**',               access: ['permitAll']],
-    
+      
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

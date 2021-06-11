@@ -44,7 +44,7 @@
                      <!--Acceder como postulante-->
                     <sec:ifLoggedIn>
                         <sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_POSTULANTE">
-                        <a class="btn btn-primary" href="/user/index">Ir a <sec:username/></a> 
+                        <a class="btn btn-primary" href="/persona/index/${sec.loggedInUserInfo(field: 'id')}">Ir a <sec:username/></a> 
                         <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
                         </sec:ifAnyGranted>
                     </sec:ifLoggedIn>
@@ -58,7 +58,7 @@
                     <!--Acceder como empresa-->
                         <sec:ifLoggedIn>
                              <sec:ifAnyGranted roles="ROLE_EMPRESA">
-                             <a class="btn btn-primary" href="/empresa/index">Ir a <sec:username/></a> 
+                             <a class="btn btn-primary" href="/empresa/index/${sec.loggedInUserInfo(field: 'id')}">Ir a <sec:username/></a> 
                              <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
                              </sec:ifAnyGranted>
                         </sec:ifLoggedIn>
