@@ -15,14 +15,12 @@ class Persona {
     String NIT
     String NUP
     String direccion
-    String telFijo 
-    String celular
     String correo
-    
-    static belongsTo = [pais:Pais]
+    static belongsTo = [usuarios:User, pais:Pais]
+
  
     static hasMany = [logros:Logro, redes:RedSocial, experienciasLaborales:Explaboral, certificaciones:Certificacion, idiomas:Idioma, 
-                        recomendaciones:PersonaRecomendacion, publicacion:Publicacion/*, usuarios:User*/]
+                        recomendaciones:PersonaRecomendacion, publicacion:Publicacion, telefono:Telefono]
     
     static constraints = {
         nombres (size:1..50, blank:false)
@@ -40,8 +38,6 @@ class Persona {
         NIT (maxSize: 14, unique:true, blank:false)
         NUP (nullable:true,unique:true, blank:true)
         direccion (blank:false)
-        telFijo (maxSize:9, nullable:true,blank:true)
-        celular (maxSize:8, blank:false)
         correo (email:true)
        
     }

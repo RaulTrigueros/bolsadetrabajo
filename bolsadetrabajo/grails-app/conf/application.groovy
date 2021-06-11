@@ -38,6 +38,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/idioma/**',                 access: ['ROLE_ADMIN',]],
     [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/telefono/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],

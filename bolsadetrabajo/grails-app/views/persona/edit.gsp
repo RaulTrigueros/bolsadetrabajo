@@ -9,9 +9,15 @@
         <a href="#edit-persona" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
-                <li><a class="home" href="${createLink(uri: 'index')}">Lista de Personas</a></li>
-                <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="${createLink(uri: '/user/index')}">Principal</a></li>
+                <li><a class="home" href="${createLink(uri: '/persona/listar')}">Lista de Personas</a></li>
+                <li><g:link class="create" action="create">Nueva Persona</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="home" href="/persona/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                </sec:ifAnyGranted>
+
                 </ul>
             </div>
             <div id="edit-persona" class="content scaffold-edit" role="main">
@@ -29,10 +35,23 @@
             <g:form resource="${this.persona}" method="PUT">
                 <g:hiddenField name="version" value="${this.persona?.version}" />
                 <fieldset class="form">
-                    <f:all bean="persona"/>
+                    <f:with bean="persona">
+                    <f:field property="nombres"/>
+                    <f:field property="apellidos"/>
+                    <f:field property="genero"/>
+                    <f:field property="fechaNac"/>
+                    <f:field property="pais"/>
+                    <f:field property="tipoDocumento"/>
+                    <f:field property="numDocumento"/>
+                    <f:field property="NIT"/>
+                    <f:field property="NUP"/>
+                    <f:field property="direccion"/>
+                    <f:field property="correo"/>
+                    <input type="hidden" name="usuarios.id" value="${sec.loggedInUserInfo(field: 'id')}" required id= "usuarios.id">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
-                    <input class="save" type="submit" value="Actualizar" />
+                    <input class="save" type="submit" value="Actualizar mis datos" />
                 </fieldset>
             </g:form>
         </div>

@@ -6,20 +6,35 @@
         <title>Mostrar Personas</title>
     </head>
     <body>
+        ${pp}
         <a href="#show-persona" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
-                <li><g:link class="list" action="index">Lista de Personas</g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/">Principal</a></li>
+                <li><g:link class="list" action="listar">Lista de Personas</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="home" href="/persona/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                <li><a class="edit" href="/personaRecomendacion/index/<sec:loggedInUserInfo field='id'/>">Mis Recomendaciones</a></li>
+                <li><a class="edit" href="/redSocial/index/<sec:loggedInUserInfo field='id'/>">Redes</a></li>
+                <li><a class="edit" href="/telefono/index/<sec:loggedInUserInfo field='id'/>">Telefono</a></li>
+                <li><a class="edit" href="/certificacion/index/<sec:loggedInUserInfo field='id'/>">Certificaciones</a></li>
+                <li><a class="edit" href="/explaboral/index/<sec:loggedInUserInfo field='id'/>">Experiencia laboral</a></li>
+                <li><a class="edit" href="/publicacion/index/<sec:loggedInUserInfo field='id'/>">Mis Publicaciones</a></li>
+                <li><a class="edit" href="/logro/index/<sec:loggedInUserInfo field='id'/>">Logros</a></li>
+                <li><a class="edit" href="/idiomaPersona/index/<sec:loggedInUserInfo field='id'/>">Idiomas</a></li>
+                
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="show-persona" class="content scaffold-show" role="main">
-            <h1>Mostrar Persona</h1>
+            <h1>Información personal</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="persona" />
+            <f:display bean="persona" except="recomendaciones,redes,certificaciones,experienciasLaborales,publicacion,logros,idiomas,usuarios,telefono"/>
             <g:form resource="${this.persona}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.persona}">Editar</g:link>
