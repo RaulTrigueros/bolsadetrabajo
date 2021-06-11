@@ -3,6 +3,8 @@ import curriculum.*
 import empresa.*
 import Ubicacion.Pais
 import java.util.Date
+import seguridad.User
+
 class Persona {
     
     String nombres

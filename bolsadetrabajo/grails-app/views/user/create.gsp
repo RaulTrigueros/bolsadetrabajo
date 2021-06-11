@@ -6,13 +6,17 @@
         <title>Crear Usuarios</title>
     </head>
     <body>
+       
         <a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
+                <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li><a class="home" href="${createLink(uri: 'index')}">Lista de Usuarios</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
+        
         <div id="create-user" class="content scaffold-create" role="main">
             <h1>Crear Usuario</h1>
             <g:if test="${flash.message}">

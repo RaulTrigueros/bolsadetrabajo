@@ -21,10 +21,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     
     </sec:ifAllGranted>
+    
+        <asset:stylesheet src="application.css"/>
+        <!--<g:layoutHead/>-->
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <asset:stylesheet src="principal.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <!--FIN ESTILOS ADMIN-->
         
     <!--ESTILOS EMPRESA Y POSTULANTE-->
-    <sec:ifAnyGranted roles="ROLE_EMPRESA,ROLE_POSTULANTE,IS_AUTHENTICATED_ANONYMOUSLY">
+    <sec:ifAnyGranted roles="ROLE_EMPRESA,ROLE_POSTULANTE">
         <asset:stylesheet src="application.css"/>
         <g:layoutHead/>
         <asset:stylesheet src="nicepage.css"/>
@@ -32,11 +38,9 @@
         <asset:javascript src="/empresa/jquery.js"/>
         <asset:javascript src="/empresa/nicepage.js"/>
     </sec:ifAnyGranted>
-    <!--FIN ESTILOS EMPRESA Y POSTULANTE-->
-        
-       <!--ESTILOS QUE PODRÁN VER LOS NUEVOS USUARIOS CREADOS-->
-       <!--  <asset:stylesheet src="application.css"/>
-        <g:layoutHead/>
+    
+       <!-- <asset:stylesheet src="application.css"/> 
+       <!-- <g:layoutHead/> 
         <asset:stylesheet src="nicepage.css"/>
         <asset:stylesheet src="Cerrar-sesion.css"/>
         <asset:javascript src="/empresa/jquery.js"/>
@@ -54,12 +58,12 @@
         <asset:stylesheet src="stylePortal.css"/>
         <asset:stylesheet src="responsive.css"/>
         <asset:javascript src="/vendor/modernizr-2.6.2.min.js"/>
-        <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script> 
-        <!-- FIN DE ESTILOS QUE PODRIAN VER LOS NUEVOS USUARIOS CREADOS-->
+        <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script> -->
+    <!--FIN ESTILOS EMPRESA Y POSTULANTE-->
         
         
     <!--ESTILOS POSTULANTE-->
-    <sec:ifAllGranted roles="ROLE_POSTULANTE,IS_AUTHENTICATED_ANONYMOUSLY">
+    <sec:ifAllGranted roles="ROLE_POSTULANTE">
         <asset:stylesheet src="normalize.css"/>
         <asset:stylesheet src="font-awesome.min.css"/>
         <asset:stylesheet src="fontello.css"/>

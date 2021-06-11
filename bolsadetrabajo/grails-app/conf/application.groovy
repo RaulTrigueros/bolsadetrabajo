@@ -25,6 +25,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/login/**',                  access: ['permitAll']],
     [pattern: '/loginEmp/**',               access: ['permitAll']],
     [pattern: '/logout/**',                 access: ['permitAll']],
+    [pattern: '/persona/listar',            access: ['permitAll']],
     
     [pattern: '/user/index',                access: ['ROLE_POSTULANTE', 'permitAll']],
     [pattern: '/user/create',               access: ['permitAll']],
@@ -36,7 +37,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/crearRol/**',               access: ['ROLE_ADMIN']],
     
     
-    [pattern: '/emailSender/**', access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/emailSender/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
@@ -44,7 +45,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/idioma/**',                 access: ['ROLE_ADMIN',]],
     [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/telefono/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/telefono/**',               access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
     [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
