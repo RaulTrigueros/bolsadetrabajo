@@ -19,7 +19,7 @@ class Persona {
     String celular
     String correo
     
-    static belongsTo = [pais:Pais]
+    static belongsTo = [pais:Pais, usuarios:User]
  
     static hasMany = [logros:Logro, redes:RedSocial, experienciasLaborales:Explaboral, certificaciones:Certificacion, idiomas:Idioma, 
                         recomendaciones:PersonaRecomendacion, publicacion:Publicacion/*, usuarios:User*/]

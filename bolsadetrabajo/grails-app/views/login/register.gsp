@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <title>Registrarse</title>
         <asset:stylesheet src="principal.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -27,31 +28,40 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="${nombresParameter ?: 'nombres'}" id="nombres"/>
                                                         <label for="inputFirstName">First name</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="${apellidosParameter ?: 'apellidos'}" id="apellidos"/>
                                                         <label for="inputLastName">Last name</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-floating mb-3">
+                                          <!--  <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
                                                 <label for="inputEmail">Email address</label>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label for="username">Usuario</label>
+                                                <input type="text" class="form-control" name="${usernameParameter ?: 'username'}" id="username" autocapitalize="none"/>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
+                                                  <!--  <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
                                                         <label for="inputPassword">Password</label>
+                                                    </div>-->
+                                                    <div class="form-group">
+                                                        <label for="password">Contraseña</label>
+                                                        <input type="password" class="form-control" name="${passwordParameter ?: 'password'}" id="password"/>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
+                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" name="${passwordParameter ?: 'password'}" id="password"/>
                                                         <label for="inputPasswordConfirm">Confirm Password</label>
                                                     </div>
                                                 </div>

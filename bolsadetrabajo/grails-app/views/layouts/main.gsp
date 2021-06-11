@@ -24,7 +24,7 @@
     <!--FIN ESTILOS ADMIN-->
         
     <!--ESTILOS EMPRESA Y POSTULANTE-->
-    <sec:ifAnyGranted roles="ROLE_EMPRESA,ROLE_POSTULANTE">
+    <sec:ifAnyGranted roles="ROLE_EMPRESA,ROLE_POSTULANTE,IS_AUTHENTICATED_ANONYMOUSLY">
         <asset:stylesheet src="application.css"/>
         <g:layoutHead/>
         <asset:stylesheet src="nicepage.css"/>
@@ -33,8 +33,33 @@
         <asset:javascript src="/empresa/nicepage.js"/>
     </sec:ifAnyGranted>
     <!--FIN ESTILOS EMPRESA Y POSTULANTE-->
+        
+       <!--ESTILOS QUE PODRÁN VER LOS NUEVOS USUARIOS CREADOS-->
+       <!--  <asset:stylesheet src="application.css"/>
+        <g:layoutHead/>
+        <asset:stylesheet src="nicepage.css"/>
+        <asset:stylesheet src="Cerrar-sesion.css"/>
+        <asset:javascript src="/empresa/jquery.js"/>
+        <asset:javascript src="/empresa/nicepage.js"/>
+        
+        <asset:stylesheet src="normalize.css"/>
+        <asset:stylesheet src="font-awesome.min.css"/>
+        <asset:stylesheet src="fontello.css"/>
+        <asset:stylesheet src="animate.css"/>      
+        <asset:stylesheet src="pbootstrap.min.cs"/> 
+        <asset:stylesheet src="owl.carousel.css"/>
+        <asset:stylesheet src="owl.theme.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="owl.transitions.css"/>
+        <asset:stylesheet src="stylePortal.css"/>
+        <asset:stylesheet src="responsive.css"/>
+        <asset:javascript src="/vendor/modernizr-2.6.2.min.js"/>
+        <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script> 
+        <!-- FIN DE ESTILOS QUE PODRIAN VER LOS NUEVOS USUARIOS CREADOS-->
+        
+        
     <!--ESTILOS POSTULANTE-->
-    <sec:ifAllGranted roles="ROLE_POSTULANTE">
+    <sec:ifAllGranted roles="ROLE_POSTULANTE,IS_AUTHENTICATED_ANONYMOUSLY">
         <asset:stylesheet src="normalize.css"/>
         <asset:stylesheet src="font-awesome.min.css"/>
         <asset:stylesheet src="fontello.css"/>
@@ -71,8 +96,6 @@
                         <i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Ajustes</a></li>
-                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
                     </ul>
                 </li>
@@ -130,14 +153,14 @@
                         
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/user/show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
         
-    </sec:ifAnyGranted>
+    </sec:ifAnyGranted> 
     <!--FIN MENU POSTULANTE-->
 
 <!--SIDEBAR DE ADMINISTRADIR-->
@@ -161,41 +184,11 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/user/listar">Lista Usuarios</a>
-                                    <a class="nav-link" href="/userRole/index/">Roles</a>
+                                    <a class="nav-link" href="/userRole/index/">Roles de Usuario</a>
+                                    <a class="nav-link" href="/role/index/">Lista de Roles</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Configuración
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Autenticación
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="/login/auth">Iniciar sesión</a>
-                                            <a class="nav-link" href="/register">Registrarse</a>
-                                            <a class="nav-link" href="/password">Olvidaste la contraseña</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            
+                           
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePersona" aria-expanded="false" aria-controls="collapsePersona">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Persona

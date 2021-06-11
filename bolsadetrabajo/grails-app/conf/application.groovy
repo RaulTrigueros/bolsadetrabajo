@@ -26,26 +26,29 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/loginEmp/**',               access: ['permitAll']],
     [pattern: '/logout/**',                 access: ['permitAll']],
     
-    [pattern: '/user/index',                access: ['ROLE_POSTULANTE']],
+    [pattern: '/user/index',                access: ['ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/user/create',               access: ['permitAll']],
+    [pattern: '/user/show/**',              access: ['permitAll']],
     [pattern: '/user/**',                   access: ['ROLE_ADMIN']],
     [pattern: '/userRole/**',               access: ['ROLE_ADMIN']],
     [pattern: '/roles/',                    access: ['ROLE_ADMIN']],
+    [pattern: '/role/**',                   access: ['ROLE_ADMIN']],
     [pattern: '/crearRol/**',               access: ['ROLE_ADMIN']],
     
-    [pattern: '/emailSender/**', access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/formacion/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/emailSender/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/persona/**',                access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/certificacion/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/explaboral/**',             access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/formacion/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/habilidadTecnica/**',       access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
     [pattern: '/idioma/**',                 access: ['ROLE_ADMIN',]],
-    [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/publicacion/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/redSocial/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
-    [pattern: '/tipoEvento/**', 	    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE']],
+    [pattern: '/idiomaPersona/**',          access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/logro/**',                  access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/participacionEvento/**',    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/personaRecomendacion/**',   access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/publicacion/**',            access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/redSocial/**',              access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
+    [pattern: '/tipoEvento/**', 	    access: ['ROLE_ADMIN', 'ROLE_POSTULANTE', 'permitAll']],
     [pattern: '/empresa/**',                access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
     [pattern: '/perfilPuesto/**', 	    access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
     [pattern: '/evaluacion/**', 	    access: ['ROLE_ADMIN', 'ROLE_EMPRESA']],
@@ -56,8 +59,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/departamento/**', 	    access: ['ROLE_ADMIN']],
     [pattern: '/municipio/**',              access: ['ROLE_ADMIN']],
     [pattern: '/pais/**',                   access: ['ROLE_ADMIN']],
-    
-    
+        
     [pattern: '/password/**',               access: ['permitAll']],
     
 ]
@@ -73,8 +75,10 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/'
-grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/listar'
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
+
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
 //grails.plugin.springsecurity.securityConfigType = "Annotation"
 

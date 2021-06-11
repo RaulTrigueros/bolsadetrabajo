@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Usuario_Create</title>
 </head>
 <body>
@@ -29,15 +30,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Username:&nbsp;<span style="color:red">*</span></span>
                         </div>
-                        <input type="text" class="form-control" id="username" name="username"
-                            placeholder="Ingrese el username" maxlength="50" value="${user.username}" required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese el username" maxlength="50" value="${user.username}" required>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Password:&nbsp;<span style="color:red">*</span></span>
                         </div>
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Ingrese la contraseña" maxlength="50" required >
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese la contraseña" maxlength="50" required >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

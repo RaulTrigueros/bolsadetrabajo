@@ -24,4 +24,7 @@ class Role implements Serializable {
 		cache true
                 version false
 	}
+        String toString(){
+        authority
+    }
 }

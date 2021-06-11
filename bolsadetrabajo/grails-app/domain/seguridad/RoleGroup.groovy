@@ -12,6 +12,7 @@ class RoleGroup implements Serializable {
 	private static final long serialVersionUID = 1
 
 	String name
+        boolean enabled = true
 
 	Set<Role> getAuthorities() {
 		(RoleGroupRole.findAllByRoleGroup(this) as List<RoleGroupRole>)*.role as Set<Role>
@@ -19,6 +20,7 @@ class RoleGroup implements Serializable {
 
 	static constraints = {
 		name nullable: false, blank: false, unique: true
+               // enabled nullable: true, blank: true, unique:true
 	}
 
 	static mapping = {

@@ -50,7 +50,8 @@
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
                         <a class="btn btn-primary" href="/login/auth">Acceder</a>
-                        <a class="btn btn-primary" href="/register">Registrar Candidato</a>
+                     <!--   <a class="btn btn-primary" href="/register">Registrar Candidato</a> -->
+                        <a class="btn btn-primary" href="/user/create">Registrar Candidato</a>
                     </sec:ifNotLoggedIn>
                      <!--Registrar postulante-->
                                         
@@ -64,7 +65,7 @@
                     
                         <sec:ifNotLoggedIn>
                             <a class="btn btn-primary" href="/loginEmp">Iniciar Empresa</a>
-                            <a class="btn btn-primary" href="/registerEmp">Registrar como empresa</a>
+                            <a class="btn btn-primary" href="/user/create">Registrar como empresa</a>
                         </sec:ifNotLoggedIn>
                     
                      <!--Contactar servicio de plataforma como empresa-->
