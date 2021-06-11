@@ -1,4 +1,5 @@
 package curriculum
+import seguridad.Persona
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
@@ -9,17 +10,23 @@ class RedSocialController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond redSocialService.list(params), model:[redSocialCount: redSocialService.count()]
+    def index(Integer id) {
+        def usu =id
+        def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))        
+        params.id = Math.min(id ?: 10, 100)
+        respond redSocialService.list(params), model:[usu:usu, per:per, redSocialCount: redSocialService.count()]
     }
 
     def show(Long id) {
-        respond redSocialService.get(id)
+        def str = RedSocial.executeQuery("select id from RedSocial p where persona.id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        respond redSocialService.get(id), model:[per:per]
     }
 
-    def create() {
-        respond new RedSocial(params)
+    def create(Long id) {
+        def per=id
+        respond new RedSocial(params), model:[per:per]
     }
 
     def save(RedSocial redSocial) {
@@ -45,7 +52,8 @@ class RedSocialController {
     }
 
     def edit(Long id) {
-        respond redSocialService.get(id)
+        def per=id
+        respond redSocialService.get(id), model:[per:per]
     }
 
     def update(RedSocial redSocial) {

@@ -6,9 +6,7 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body> 
-        <!--Prueba de parametro-->
-        ${sec.loggedInUserInfo(field: 'id')}
-        <!--Fin prueba-->
+        
         <section class=" u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1280" data-image-height="853" id="sec-827c">
             <div class=" u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <h1 class="u-text u-text-1">BIENVENIDO</h1>
@@ -16,7 +14,7 @@
             <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
             
-            <a href="show/${sec.loggedInUserInfo(field: 'id')}">
+            <a href="../show/${emp}" >
             <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-4 u-repeater-item u-shape-round u-video-cover u-list-item-1">
                 <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-1">
                     <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 128 128" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5e7a"></use></svg>
@@ -58,7 +56,11 @@
             </a>
           </div>
         </div>
+
         <a href="/emailSender/contacto" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
+
+        <a href="../../emailSender/contacto" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
+
       </div>
     </section>
 

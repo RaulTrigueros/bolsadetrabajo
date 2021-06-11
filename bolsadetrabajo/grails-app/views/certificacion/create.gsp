@@ -9,8 +9,13 @@
         <a href="#create-certificacion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="list" href="/certificacion/index/${sec.loggedInUserInfo(field: 'id')}">Certificaciones</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-certificacion" class="content scaffold-create" role="main">
@@ -27,7 +32,15 @@
             </g:hasErrors>
             <g:form resource="${this.certificacion}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="certificacion"/>
+                    <f:with bean="certificacion">
+                    <f:field property="nombreCertificacion"/>
+                    <f:field property="codigoCertificacion"/>
+                    <f:field property="fechaInicio"/>
+                    <f:field property="fechaFin"/>
+                    <f:field property="tipoCertificacion"/>
+                    <f:field property="institucionDeCertificacion"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

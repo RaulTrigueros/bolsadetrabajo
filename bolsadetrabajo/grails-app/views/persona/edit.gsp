@@ -15,7 +15,7 @@
                 <li><g:link class="create" action="create">Nueva Persona</g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                <li><a class="home" href="/persona/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                <li><a class="home" href="/persona/show/${usu}">Principal</a></li>
                 </sec:ifAnyGranted>
 
                 </ul>

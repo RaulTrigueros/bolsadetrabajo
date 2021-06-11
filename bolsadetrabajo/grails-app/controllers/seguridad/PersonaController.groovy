@@ -55,7 +55,8 @@ class PersonaController {
     }
 
     def edit(Long id) {
-        respond personaService.get(id)
+        def usu = id
+        respond personaService.get(id), model:[usu:usu]
     }
 
     def update(Persona persona) {
