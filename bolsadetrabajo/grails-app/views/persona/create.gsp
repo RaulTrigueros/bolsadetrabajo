@@ -32,20 +32,9 @@
             </g:hasErrors>
             <g:form resource="${this.persona}" method="POST">
                 <fieldset class="form">
-                    <f:with bean="persona">
-                    <f:field property="nombres"/>
-                    <f:field property="apellidos"/>
-                    <f:field property="genero"/>
-                    <f:field property="fechaNac"/>
-                    <f:field property="pais"/>
-                    <f:field property="tipoDocumento"/>
-                    <f:field property="numDocumento"/>
-                    <f:field property="NIT"/>
-                    <f:field property="NUP"/>
-                    <f:field property="direccion"/>
-                    <f:field property="correo"/>
-                    <input type="hidden" name="usuarios.id" value="${sec.loggedInUserInfo(field: 'id')}" required id= "usuarios.id">
-                    </f:with>
+                    <f:all bean="persona">
+                        </f:all>
+                    
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save"  value="Guardar datos personales" />

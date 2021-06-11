@@ -11,8 +11,8 @@ class PersonaController {
 
     def index(Long id) {
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
-        def per = str.toString().replace("[", "").replace("]", "")
-        [per:per]
+        def usu = str.toString().replace("[", "").replace("]", "")
+        [usu:usu]
     }
     
     def listar(Integer max) {
@@ -22,11 +22,10 @@ class PersonaController {
 
     def show(Long id) {
         if (id){
-            respond personaService.get(id)
+            def usu = id
+            respond personaService.get(id),model:[usu:usu]
             
         }else {redirect action:"create"}
-      
-
     }
 
     def create() {
