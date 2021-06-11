@@ -99,7 +99,7 @@
                         <i class="fas fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Mi Empresa</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/empresa/show/${emp}" style="padding: 10px 14px;">Mi Empresa:</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Lista-de-solicitudes.html" style="padding: 10px 14px;">Lista de solicitudes</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Ofrecer-Empleo.html" style="padding: 10px 14px;">Ofrecer Empleo</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
@@ -130,7 +130,7 @@
                         
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="show/${sec.loggedInUserInfo(field: 'id')}" style="padding: 10px 14px;">Area personal</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/persona/show/${per}" style="padding: 10px 14px;">Area personal</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
                     </ul>
                 </li>
@@ -203,7 +203,7 @@
                             </a>
                             <div class="collapse" id="collapsePersona" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/persona/index">Lista Persona</a>
+                                    <a class="nav-link" href="/persona/listar">Lista Persona</a>
                                     <a class="nav-link" href="/certificacion/index/">Certificacion</a>
                                     <a class="nav-link" href="/explaboral/index/">Experiencia laboral</a>
                                     <a class="nav-link" href="/formacion/index/">Formacion</a>
