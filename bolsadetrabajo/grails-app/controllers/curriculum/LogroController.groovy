@@ -1,5 +1,5 @@
 package curriculum
-
+import seguridad.Persona
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -9,17 +9,23 @@ class LogroController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond logroService.list(params), model:[logroCount: logroService.count()]
+    def index(Integer id) {
+        def usu =id
+        def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        params.id = Math.min(id ?: 10, 100)
+        respond logroService.list(params), model:[usu:usu, per:per, logroCount: logroService.count()]
     }
 
     def show(Long id) {
-        respond logroService.get(id)
+        def str = Logro.executeQuery("select persona.id from Logro p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        respond logroService.get(id),model:[per:per]
     }
 
-    def create() {
-        respond new Logro(params)
+    def create(Long id) {
+        def per=id
+        respond new Logro(params),model:[per:per]
     }
 
     def save(Logro logro) {
@@ -45,7 +51,9 @@ class LogroController {
     }
 
     def edit(Long id) {
-        respond logroService.get(id)
+        def str = Logro.executeQuery("select persona.id from Logro p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        respond logroService.get(id),model:[per:per]
     }
 
     def update(Logro logro) {

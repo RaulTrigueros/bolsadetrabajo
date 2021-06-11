@@ -9,9 +9,14 @@
         <a href="#show-logro" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/user/index">Principal</a></li>
                 <li><g:link class="list" action="index">Lista de Logros</g:link></li>
                 <li><g:link class="create" action="create">Nuevo logro</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                    <li><a class="list" href="/logro/index/${per}"> <g:message code="default.list.label" args="[entityName]" /></a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="show-logro" class="content scaffold-show" role="main">

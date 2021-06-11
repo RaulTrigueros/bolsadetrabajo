@@ -9,9 +9,14 @@
         <a href="#edit-explaboral" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/user/index"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="list" href="/explaboral/index/${sec.loggedInUserInfo(field: 'id')}" ><g:message code="default.list.label" args="[entityName]" /></a></li>                
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="edit-explaboral" class="content scaffold-edit" role="main">
@@ -29,7 +34,15 @@
             <g:form resource="${this.explaboral}" method="PUT">
                 <g:hiddenField name="version" value="${this.explaboral?.version}" />
                 <fieldset class="form">
-                    <f:all bean="explaboral"/>
+                    <f:with bean="explaboral">
+                    <f:field property="organizacionDeExperiencia"/>
+                    <f:field property="contactoOrganizacion"/>
+                    <f:field property="puestoTrabajo"/>
+                    <f:field property="fechaInicio"/>
+                    <f:field property="fechaFin"/>
+                    <f:field property="funcionesDesempenadas"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

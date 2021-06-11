@@ -1,5 +1,5 @@
 package curriculum
-
+import seguridad.Persona
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -9,17 +9,23 @@ class PublicacionController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond publicacionService.list(params), model:[publicacionCount: publicacionService.count()]
+    def index(Integer id) {
+        def usu =id
+        def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        params.id = Math.min(id ?: 10, 100)
+        respond publicacionService.list(params), model:[usu:usu,per:per,publicacionCount: publicacionService.count()]
     }
 
     def show(Long id) {
-        respond publicacionService.get(id)
+        def str = Publicacion.executeQuery("select persona.id from Publicacion p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        respond publicacionService.get(id), model:[per:per]
     }
 
-    def create() {
-        respond new Publicacion(params)
+    def create(Long id) {
+        def per=id
+        respond new Publicacion(params), model:[per:per]
     }
 
     def save(Publicacion publicacion) {
@@ -45,7 +51,9 @@ class PublicacionController {
     }
 
     def edit(Long id) {
-        respond publicacionService.get(id)
+        def str = Publicacion.executeQuery("select persona.id from Publicacion p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        respond publicacionService.get(id), model:[per:per]
     }
 
     def update(Publicacion publicacion) {

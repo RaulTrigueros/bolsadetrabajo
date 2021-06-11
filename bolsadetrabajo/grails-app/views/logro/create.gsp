@@ -9,8 +9,13 @@
         <a href="#create-logro" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
                 <li><a class="home" href="${createLink(uri: 'index')}">Lista de Logros</a></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                    <li><a class="list" href="/logro/index/${sec.loggedInUserInfo(field: 'id')}">Logros</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-logro" class="content scaffold-create" role="main">
@@ -27,7 +32,12 @@
             </g:hasErrors>
             <g:form resource="${this.logro}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="logro"/>
+                    <f:with bean="logro">
+                    <f:field property="tipoLogro"/>
+                    <f:field property="nombreLogro"/>
+                    <f:field property="fechaLogro"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="Crear" />

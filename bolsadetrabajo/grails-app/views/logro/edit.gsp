@@ -9,10 +9,15 @@
         <a href="#edit-logro" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/user/index">Principal</a></li>
                 <li><a class="home" href="${createLink(uri: 'index')}">Lista de Logros</a></li>
                 <li><g:link class="create" action="create">Nuevo logro</g:link></li>
-                </ul>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                    <li><a class="list" href="/logro/index/${sec.loggedInUserInfo(field: 'id')}" ><g:message code="default.list.label" args="[entityName]" /></a></li>      
+                </sec:ifAnyGranted>
+            </ul>
             </div>
             <div id="edit-logro" class="content scaffold-edit" role="main">
                 <h1>Editar logro</h1>
@@ -29,7 +34,12 @@
             <g:form resource="${this.logro}" method="PUT">
                 <g:hiddenField name="version" value="${this.logro?.version}" />
                 <fieldset class="form">
-                    <f:all bean="logro"/>
+                    <f:with bean="logro">
+                    <f:field property="tipoLogro"/>
+                    <f:field property="nombreLogro"/>
+                    <f:field property="fechaLogro"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="Actualizar" />
