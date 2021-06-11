@@ -9,13 +9,23 @@ class PersonaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index(Long id) {
+        def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
+        def usu = str.toString().replace("[", "").replace("]", "")
+        [usu:usu]
+    }
+    
+    def listar(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond personaService.list(params), model:[personaCount: personaService.count()]
     }
 
     def show(Long id) {
-        respond personaService.get(id)
+        if (id){
+            def usu = id
+            respond personaService.get(id),model:[usu:usu]
+            
+        }else {redirect action:"create"}
     }
 
     def create() {
