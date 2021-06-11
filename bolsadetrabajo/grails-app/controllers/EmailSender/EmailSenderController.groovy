@@ -4,9 +4,11 @@ import org.springframework.web.multipart.MultipartFile
 
 class EmailSenderController {
 
+    //Las 4 vistas que usan este controlador
     def index() { }
-    
     def contacto() {}
+    def desbloqueo() {}
+    def cambioRol() {}
     
     def send() {
         def multipartFile = request.getFile('attachment')
@@ -30,7 +32,7 @@ class EmailSenderController {
     def envio2() {
         sendMail {
         	to params.address
-        	subject params.subject
+        	subject "Ayuda BADMASTER"
         	html params.body
    		}
 
@@ -38,6 +40,27 @@ class EmailSenderController {
     	//redirect to:"../../index" 
         //render(view:"contacto")
         redirect action:"contacto"
+    }
+    
+    def desbloq() {
+        sendMail {
+        	to params.address
+        	subject "Solicitud-Desbloqueo-Cuenta"
+        	html params.body
+   		}
+
+    	flash.message = "Se envio correctamente el mensaje "+new Date()
+        redirect action:"desbloqueo"
+    }
+        def solRol() {
+        sendMail {
+        	to params.address
+        	subject "Solicitud-Cambio-Rol"
+        	html  "**ROL: " + params.group  + " **CUENTA A REASIGNAR: " + params.body
+   		}
+
+    	flash.message = "Se envio correctamente el mensaje "+new Date()
+        redirect action:"cambioRol"
     }
 	
 }

@@ -38,9 +38,12 @@
                                                 <label class="form-check-label" for="inputRememberPassword">Recordar contraseña</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/password">¿Has olvidado tu contraseña?</a>
+                                                <a href="/emailSender/desbloqueo">Desbloquear cuenta</a>
+                                               
+                                                
                                                 <button id="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Acceder</button>
                                             </div>
+                                            
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
