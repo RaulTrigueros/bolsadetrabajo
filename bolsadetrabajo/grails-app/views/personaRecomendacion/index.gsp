@@ -9,16 +9,23 @@
         <a href="#list-personaRecomendacion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="list" href="/personaRecomendacion/create/${usu}"><g:message  code="Agregar Referencia Personal" /></li>
+
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="home" href="/persona/show/${per}"><g:message code="default.home.label"/></a></li>
+                <li><a class="list" href="/personaRecomendacion/create/${per}"><g:message  code="Agregar Referencia Personal" /></a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="list-personaRecomendacion" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1><g:message code="Referencias Personales" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${personaRecomendacionList}" />
+            <f:table collection="${personaRecomendacionList}" except="id,persona" />
 
             <div class="pagination">
                 <g:paginate total="${personaRecomendacionCount ?: 0}" />

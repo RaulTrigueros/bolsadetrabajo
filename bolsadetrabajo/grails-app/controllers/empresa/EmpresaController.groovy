@@ -1,5 +1,5 @@
 package empresa
-
+import  java.util.*
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -14,13 +14,17 @@ class EmpresaController {
         respond empresaService.list(params), model:[empresaCount: empresaService.count()]
     }
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond empresaService.list(params), model:[empresaCount: empresaService.count()]
+    def index(Long id) {
+        def str = Empresa.executeQuery("select id from Empresa e where e.usuarios.id ="+id)
+        def emp = str.toString().replace("[", "").replace("]", "")
+        [emp:emp]
     }
-    
+
     def show(Long id) {
-        respond empresaService.get(id)
+        if (id){
+            respond empresaService.get(id)
+        }else {redirect action:"create"}
+        
     }
 
     def create() {

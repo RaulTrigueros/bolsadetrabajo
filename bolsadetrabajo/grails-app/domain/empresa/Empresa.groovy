@@ -8,7 +8,7 @@ class Empresa {
     String sitioWeb
     String descripcionEmpresa
     
-    //static belongsTo = [usuarios:User]
+    static belongsTo = [usuarios:User]
     static hasMany=[perfilPuesto:PerfilPuesto]
     static constraints = {
         nombreEmpresa maxZize:200

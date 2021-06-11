@@ -33,11 +33,8 @@
                     <f:field property="correoEmpresa"/>
                     <f:field property="sitioWeb"/>
                     <f:field property="descripcionEmpresa"/>
+                    <f:field property="usuarios.id" placeholder="${sec.loggedInUserInfo(field: 'username')}" value="${sec.loggedInUserInfo(field: 'id')}"/>
                     </f:with>
-                    
-                    <label for="id_user">
-                    <input type="hidden" name="id_user.id" placeholder="${sec.loggedInUserInfo(field: 'username')}" value="${sec.loggedInUserInfo(field: 'id')}"/>
-
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

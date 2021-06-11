@@ -10,7 +10,7 @@
         
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
+                <li><a class="home" href="/user/index">Principal</a></li>
                 <li><g:link class="create" action="create">Nueva Persona</g:link></li>
             </ul>
         </div>

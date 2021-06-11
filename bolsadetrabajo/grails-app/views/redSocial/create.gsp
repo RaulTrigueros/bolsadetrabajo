@@ -9,8 +9,13 @@
         <a href="#create-redSocial" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/user/index">><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="list" href="/redSocial/index/${sec.loggedInUserInfo(field: 'id')}">Redes sociales</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-redSocial" class="content scaffold-create" role="main">
@@ -27,7 +32,12 @@
             </g:hasErrors>
             <g:form resource="${this.redSocial}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="redSocial"/>
+                    <f:with bean="redSocial">
+                    <f:field property="linkedin"/>
+                    <f:field property="facebook"/>
+                    <f:field property="twitter"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

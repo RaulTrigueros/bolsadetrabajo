@@ -1,5 +1,5 @@
 package curriculum
-
+import seguridad.Persona
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -9,17 +9,24 @@ class TelefonoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond telefonoService.list(params), model:[telefonoCount: telefonoService.count()]
+    def index(Long id) {
+        def usu =id
+        def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        params.id = Math.min(id ?: 10, 100)
+        respond telefonoService.list(params), model:[usu:usu,per:per,telefonoCount: telefonoService.count()]
     }
 
     def show(Long id) {
-        respond telefonoService.get(id)
+        def str = Telefono.executeQuery("select persona.id from Telefono p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        
+        respond telefonoService.get(id), model:[per:per]
     }
 
-    def create() {
-        respond new Telefono(params)
+    def create(Long id) {
+        def per=id
+        respond new Telefono(params),model:[per:per]
     }
 
     def save(Telefono telefono) {
@@ -45,7 +52,10 @@ class TelefonoController {
     }
 
     def edit(Long id) {
-        respond telefonoService.get(id)
+        def str = Telefono.executeQuery("select persona.id from Telefono p where id ="+id)
+        def per =(str.toString().replace("[", "").replace("]", ""))
+        
+        respond telefonoService.get(id),model:[per:per]
     }
 
     def update(Telefono telefono) {
