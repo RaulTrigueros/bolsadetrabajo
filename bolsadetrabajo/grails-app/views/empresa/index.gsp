@@ -24,7 +24,7 @@
                 </div>
             </div>
             </a>
-            <a href="">
+            <a href="/perfilPuesto/index/${emp}">
             <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-4 u-repeater-item u-shape-round u-video-cover u-list-item-2" data-href="https://nicepage.com/es/temas-wordpress">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-2">
             <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 128 128" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e6b7"></use></svg>
@@ -34,7 +34,7 @@
               </div>
             </div>
             </a>
-            <a href="">
+            <a href="/perfilPuesto/create/${emp}">
             <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-4 u-repeater-item u-shape-round u-video-cover u-list-item-3" data-href="https://nicepage.com/k/adult-website-templates">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-3">
             <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 128 128" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4ebb"></use></svg>
