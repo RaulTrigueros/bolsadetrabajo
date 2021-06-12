@@ -9,6 +9,7 @@ class Formacion {
     String nombreFormacion
     String institucionDeFormacion
     
+    static belongsTo = [persona:Persona]
     static constraints = {
         fechaInicio (blank:false,validator: {
             if (it?.compareTo(new Date()) > 0)

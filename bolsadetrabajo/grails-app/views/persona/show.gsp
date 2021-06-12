@@ -17,14 +17,15 @@
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
                 <li><a class="home" href="/persona/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
-                <li><a class="edit" href="/personaRecomendacion/index/<sec:loggedInUserInfo field='id'/>">Mis Recomendaciones</a></li>
-                <li><a class="edit" href="/redSocial/index/<sec:loggedInUserInfo field='id'/>">Redes</a></li>
-                <li><a class="edit" href="/telefono/index/<sec:loggedInUserInfo field='id'/>">Telefono</a></li>
-                <li><a class="edit" href="/certificacion/index/<sec:loggedInUserInfo field='id'/>">Certificaciones</a></li>
-                <li><a class="edit" href="/explaboral/index/<sec:loggedInUserInfo field='id'/>">Experiencia laboral</a></li>
-                <li><a class="edit" href="/publicacion/index/<sec:loggedInUserInfo field='id'/>">Mis Publicaciones</a></li>
-                <li><a class="edit" href="/logro/index/<sec:loggedInUserInfo field='id'/>">Logros</a></li>
-                <li><a class="edit" href="/idiomaPersona/index/<sec:loggedInUserInfo field='id'/>">Idiomas</a></li>
+                <li><a class="list" href="/personaRecomendacion/index/<sec:loggedInUserInfo field='id'/>">Mis Recomendaciones</a></li>
+                <li><a class="list" href="/redSocial/index/<sec:loggedInUserInfo field='id'/>">Redes</a></li>
+                <li><a class="list" href="/telefono/index/<sec:loggedInUserInfo field='id'/>">Telefono</a></li>
+                <li><a class="list" href="/formacion/index/<sec:loggedInUserInfo field='id'/>">Formación</a></li>
+                <li><a class="list" href="/certificacion/index/<sec:loggedInUserInfo field='id'/>">Certificaciones</a></li>
+                <li><a class="list" href="/explaboral/index/<sec:loggedInUserInfo field='id'/>">Experiencia laboral</a></li>
+                <li><a class="list" href="/publicacion/index/<sec:loggedInUserInfo field='id'/>">Mis Publicaciones</a></li>
+                <li><a class="list" href="/logro/index/<sec:loggedInUserInfo field='id'/>">Logros</a></li>
+                <li><a class="list" href="/idiomaPersona/index/<sec:loggedInUserInfo field='id'/>">Idiomas</a></li>
                 
                 </sec:ifAnyGranted>
             </ul>

@@ -27,7 +27,10 @@
             </g:hasErrors>
             <g:form resource="${this.idioma}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="idioma"/>
+                    <f:with bean="idioma">
+                    <f:field property="nombreIdioma"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

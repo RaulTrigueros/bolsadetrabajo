@@ -33,7 +33,7 @@
                     <f:field property="correoEmpresa"/>
                     <f:field property="sitioWeb"/>
                     <f:field property="descripcionEmpresa"/>
-                    <f:field property="usuarios.id" placeholder="${sec.loggedInUserInfo(field: 'username')}" value="${sec.loggedInUserInfo(field: 'id')}"/>
+                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
                     </f:with>
                 </fieldset>
                 <fieldset class="buttons">
@@ -41,7 +41,5 @@
                 </fieldset>
             </g:form>
         </div>
-        ${sec.loggedInUserInfo(field: 'id')}
-        ${sec.loggedInUserInfo(field: 'username')}
     </body>
 </html>
