@@ -11,98 +11,65 @@
   
             <div class="container">
                 <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
-                    <h5>Recent Jobs</h5>
-                    <h2><span>54716</span> Available jobs for you</h2>
+                    <h5>Empleos Recientes</h5>
+                    <p><br/></p>
+                    <h2>Empleos disponibles para ti</h2>
                 </div>
                 <div class="row jobs">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="job-posts table-responsive">
                             <table class="table">
-                                <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                                    <td class="tbl-logo"><img src="img/job-logo1.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Web Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>dribbble community</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="even wow fadeInUp" data-wow-delay="1.1s">
-                                    <td class="tbl-logo"><img src="img/job-logo2.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Front End Developer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Jolil corporation</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="odd wow fadeInUp" data-wow-delay="1.2s">
-                                    <td class="tbl-logo"><img src="img/job-logo3.png" alt=""></td>
-                                    <td class="tbl-title"><h4>HR Manager <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Fanta bevarage</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="even wow fadeInUp" data-wow-delay="1.3s">
-                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Google</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="odd wow fadeInUp" data-wow-delay="1.4s">
-                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Microsoft</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="even hide-jobs">
-                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Google</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="odd hide-jobs">
-                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Microsoft</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="even hide-jobs">
-                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Google</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
-                                <tr class="odd hide-jobs">
-                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
-                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>Microsoft</p></td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
-                                </tr>
+                                <thead>
+                                    <tr class="even wow fadeInUp" data-wow-delay="1s">
+                                        <th class="text-center">Nombre de Puesto</th>
+                                        <th class="text-center">Descripción</th>
+                                        <th class="text-center">Conocimientos Necesario</th>
+                                        <th class="text-center">Perfil Académico</th>
+                                        <th class="text-center">Habilidades Requeridas</th>
+                                        <th class="text-center">Experiencia Laboral</th>
+                                        <th class="text-center">Salario Minimo</th>
+                                        <th class="text-center">Salario Máximo</th>
+                                        <th class="text-center">Ubicacion</th>
+                                        <th class="text-center">Acción</th>
+                                    </tr>
+                                </thead>
+                                <g:each var="perfil" in="${perfiles}">
+                                    <tr class="odd wow fadeInUp" data-wow-delay="1s">
+                                        <%-- <td class="tbl-logo"><img src="img/job-logo1.png" alt=""></td> --%>
+                                        <td class="tbl-title">
+                                            <h4>${perfil.nombrePuestoTrabajo}</h4>
+                                        </td>
+                                        <td><p class="text-center">${perfil.descripcionPuesto}</p></td>
+                                        <td><p class="text-center">${perfil.conocimientosNecesarios}</p></td>
+                                        <td><p class="text-center">${perfil.perfilAcademico}</p></td>
+                                        <td><p class="text-center">${perfil.habilidades}</p></td>
+                                        <td><p class="text-center">${perfil.experienciaLaboral}</p></td>
+                                        <td><p class="text-center">&dollar;${perfil.salarioMin}</p></td>
+                                        <td><p class="text-center">&dollar;${perfil.salarioMax}</p></td>
+                                        <td><p class="text-center"><p><i class="icon-location"></i>${perfil.ubicacionGeografica}</p></p></td>
+                                        <td class="tbl-apply"><a href="/PerfilPuesto/show/${perfil.id}">Ver</a></td>
+                                    </tr>
+                                </g:each>
+                                <tfoot>
+                                    <tr class="even wow fadeInUp" data-wow-delay="1s">
+                                        <th class="text-center">Nombre de Puesto</th>
+                                        <th class="text-center">Descripción</th>
+                                        <th class="text-center">Conocimientos Necesario</th>
+                                        <th class="text-center">Perfil Académico</th>
+                                        <th class="text-center">Habilidades Requeridas</th>
+                                        <th class="text-center">Experiencia Laboral</th>
+                                        <th class="text-center">Salario Minimo</th>
+                                        <th class="text-center">Salario Máximo</th>
+                                        <th class="text-center">Ubicacion</th>
+                                        <th class="text-center">Acción</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
-                        <div class="more-jobs">
-                            <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 hidden-sm">
-                        <div class="job-add wow fadeInRight" data-wow-delay="1.5s">
-                            <h2>Seeking a job?</h2>
-                            <a href="#">Create a Account</a>
-                        </div>
+
                     </div>
                 </div>
+
             </div>
             <hr>
             <div class="container">
@@ -202,5 +169,5 @@
                 </div>
             </div>
     </body>
-    
+
 </html>

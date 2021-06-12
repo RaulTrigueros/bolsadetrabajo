@@ -2,6 +2,7 @@ package seguridad
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import empresa.PerfilPuesto
 
 class PersonaController {
 
@@ -12,7 +13,9 @@ class PersonaController {
     def index(Long id) {
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
         def usu = str.toString().replace("[", "").replace("]", "")
-        [usu:usu]
+
+        def perfiles = PerfilPuesto.executeQuery("from PerfilPuesto")
+        [usu:usu, perfiles:perfiles]
     }
     
     def listar(Integer max) {
