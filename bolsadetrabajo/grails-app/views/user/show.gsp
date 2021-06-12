@@ -9,9 +9,11 @@
         <a href="#show-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
-                <li><g:link class="list" action="index">Lista de Usuarios</g:link></li>
+                <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><g:link class="list" action="listar">Lista de Usuarios</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Usuario</g:link></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="show-user" class="content scaffold-show" role="main">

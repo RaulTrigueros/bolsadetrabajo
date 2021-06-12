@@ -33,11 +33,7 @@ class User implements Serializable {
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
-       //roles  nullable: true, blank: true, unique:true
-        /* roleGroups  nullable: true, blank: true, unique:true*/
-      //  roleGroupRoles  nullable: true, blank: true, unique:true 
-       //userRoleGroups  nullable: true, blank: true, unique:true
-           
+                   
     }
     static mapping = {
 	    password column: '`password`'
