@@ -22,9 +22,9 @@ class EmpresaController {
 
     def show(Long id) {
         if (id){
-            respond empresaService.get(id)
-        }else {redirect action:"create"}
-        
+            def emp = id
+            respond empresaService.get(id), model:[emp:emp]
+        }else {redirect action:"create"} 
     }
 
     def create() {
@@ -54,7 +54,8 @@ class EmpresaController {
     }
 
     def edit(Long id) {
-        respond empresaService.get(id)
+        def emp = id
+        respond empresaService.get(id), model:[emp:emp]
     }
 
     def update(Empresa empresa) {

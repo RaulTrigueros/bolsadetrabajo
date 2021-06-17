@@ -9,10 +9,14 @@
         <a href="#edit-empresa" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
+                <li><a class="list" href="${createLink(uri: '/empresa/listar')}">Lista de Empresas</a></li>
+                <li><g:link class="create" action="create">Nueva Empresa</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <li><a class="home" href="/empresa/show/${emp}">Principal</a></li>
+                </sec:ifAnyGranted></ul>
         </div>
         <div id="edit-empresa" class="content scaffold-edit" role="main">
             <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
@@ -29,7 +33,13 @@
             <g:form resource="${this.empresa}" method="PUT">
                 <g:hiddenField name="version" value="${this.empresa?.version}" />
                 <fieldset class="form">
-                    <f:all bean="empresa"/>
+                    <f:with bean="empresa">
+                    <f:field property="nombreEmpresa"/>
+                    <f:field property="correoEmpresa"/>
+                    <f:field property="sitioWeb"/>
+                    <f:field property="descripcionEmpresa"/>
+                    <input type="hidden" name="usuarios.id" value="${sec.loggedInUserInfo(field: 'id')}" required id= "usuarios.id">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

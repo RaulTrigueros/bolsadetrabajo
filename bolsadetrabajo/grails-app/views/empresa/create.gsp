@@ -9,8 +9,13 @@
         <a href="#create-empresa" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
+                <li><a class="home" href="${createLink(uri: '/empresa/listar')}">Lista de Empresas</a></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-empresa" class="content scaffold-create" role="main">
@@ -33,7 +38,7 @@
                     <f:field property="correoEmpresa"/>
                     <f:field property="sitioWeb"/>
                     <f:field property="descripcionEmpresa"/>
-                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    <input type="hidden" name="usuarios.id" value="${sec.loggedInUserInfo(field: 'id')}" required id= "usuarios.id">
                     </f:with>
                 </fieldset>
                 <fieldset class="buttons">

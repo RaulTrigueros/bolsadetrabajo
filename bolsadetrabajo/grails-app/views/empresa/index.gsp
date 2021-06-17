@@ -14,7 +14,7 @@
             <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
             
-            <a href="../show/${emp}" >
+            <a href="/empresa/show/${emp}" >
             <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-4 u-repeater-item u-shape-round u-video-cover u-list-item-1">
                 <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-1">
                     <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 128 128" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5e7a"></use></svg>

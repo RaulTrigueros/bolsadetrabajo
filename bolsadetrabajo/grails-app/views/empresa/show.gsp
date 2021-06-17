@@ -6,13 +6,17 @@
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
-        ${emp}
         <a href="#show-empresa" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/inicio/">Principal</a></li>
+                <li><g:link class="list" action="listar">Lista de Personas</g:link></li>
+                <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="show-empresa" class="content scaffold-show" role="main">
@@ -20,7 +24,7 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="empresa" />
+            <f:display bean="empresa" except="perfilPuesto,usuarios"/>
             <g:form resource="${this.empresa}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.empresa}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
