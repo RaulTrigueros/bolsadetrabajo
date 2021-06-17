@@ -34,10 +34,7 @@
                                                 <input type="password" class="form-control" name="${passwordParameter ?: 'password'}" id="password"/>
                                                
                                             </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Recordar contraseña</label>
-                                            </div>
+                                            
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a href="/emailSender/desbloqueo">Desbloquear cuenta</a>
                                                

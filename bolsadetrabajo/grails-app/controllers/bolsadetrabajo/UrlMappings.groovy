@@ -15,6 +15,7 @@ class UrlMappings {
        "/empresa"(controller:'empresa', action:'index')
        "/user/roles"(controller:'userRole', action:'index')
        "/crearRol"(controller:'userRole', action:'create')
+       "/inicio"(view:"/user/inicio")
        "/register"(view:"/login/register")
        "/password"(view:"/login/password")
        "/registerEmp"(view:"/loginEmpresa/register")

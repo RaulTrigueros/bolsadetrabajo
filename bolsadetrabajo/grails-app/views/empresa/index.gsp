@@ -59,8 +59,6 @@
 
         <a href="/emailSender/contacto" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
 
-        <a href="../../emailSender/contacto" class="u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-50 u-btn-1">Contactanos</a>
-
       </div>
     </section>
 
