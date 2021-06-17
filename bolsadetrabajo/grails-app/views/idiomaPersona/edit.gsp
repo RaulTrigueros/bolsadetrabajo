@@ -10,12 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                <li><a class="list" href="/idiomaPersona/index/${sec.loggedInUserInfo(field: 'id')}" ><g:message code="default.list.label" args="[entityName]" /></a></li>                
+                <li><a class="list" href="/idiomaPersona/index/${sec.loggedInUserInfo(field: 'id')}" ><g:message code="default.list.label" args="[entityName]" /></a></li>
                 </sec:ifAnyGranted>
                 
             </ul>
@@ -35,7 +35,7 @@
             <g:form resource="${this.idiomaPersona}" method="PUT">
                 <g:hiddenField name="version" value="${this.idiomaPersona?.version}" />
                 <fieldset class="form">
-                    <f:all bean="idiomaPersona"/>
+                    <f:all bean="idiomaPersona" except="persona"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

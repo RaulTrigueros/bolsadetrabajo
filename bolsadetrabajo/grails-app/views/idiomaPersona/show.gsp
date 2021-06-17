@@ -10,13 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>          
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                    <li><a class="list" href="/idiomaPersona/index/${per}"> <g:message code="default.list.label" args="[entityName]" /></a></li>
-
+                    <li><a class="list" href="/idiomaPersona/index/${sec.loggedInUserInfo(field: 'id')}"> <g:message code="default.list.label" args="[entityName]" /></a></li>
                 </sec:ifAnyGranted>
                 
             </ul>
@@ -26,7 +25,12 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="idiomaPersona" />
+            <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <f:display bean="idiomaPersona"/>
+            </sec:ifAnyGranted>
+            <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <f:display bean="idiomaPersona" except="persona"/>
+            </sec:ifAnyGranted>
             <g:form resource="${this.idiomaPersona}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.idiomaPersona}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

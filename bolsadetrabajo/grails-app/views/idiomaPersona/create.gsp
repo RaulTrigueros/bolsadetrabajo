@@ -10,11 +10,11 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                <li><a class="list" href="/idiomaPersona/index/${sec.loggedInUserInfo(field: 'id')}">idiomas</a></li>
+                <li><a class="list" href="/idiomaPersona/index/${sec.loggedInUserInfo(field: 'id')}">Logros</a></li>
                 </sec:ifAnyGranted>
             </ul>
         </div>
@@ -32,8 +32,11 @@
             </g:hasErrors>
             <g:form resource="${this.idiomaPersona}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="idiomaPersona">
-                    </f:all>
+                    <f:with bean="idiomaPersona">
+                    <f:field property="nivel"/>
+                    <f:field property="idioma"/>
+                    <input type="hidden" name="persona.id" value="${pos}" required id= "${pos}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

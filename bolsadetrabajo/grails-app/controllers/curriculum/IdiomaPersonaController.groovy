@@ -12,20 +12,20 @@ class IdiomaPersonaController {
     def index(Integer id) {
         def usu =id
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
+        def pos =(str.toString().replace("[", "").replace("]", ""))
         params.id = Math.min(id ?: 10, 100)
-        respond idiomaPersonaService.list(params), model:[usu:usu,per:per,idiomaPersonaCount: idiomaPersonaService.count()]
+        respond idiomaPersonaService.list(params), model:[usu:usu,pos:pos,idiomaPersonaCount: idiomaPersonaService.count()]
     }
 
     def show(Long id) {
         def str = IdiomaPersona.executeQuery("select persona.id from IdiomaPersona p where id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
-        respond idiomaPersonaService.get(id),model:[per:per]
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond idiomaPersonaService.get(id),model:[pos:pos]
     }
 
     def create(Long id) {
-        def per=id
-        respond new IdiomaPersona(params),model:[per:per]
+        def pos=id
+        respond new IdiomaPersona(params),model:[pos:pos]
     }
 
     def save(IdiomaPersona idiomaPersona) {
@@ -51,9 +51,9 @@ class IdiomaPersonaController {
     }
 
     def edit(Long id) {
-       def str = IdiomaPersona.executeQuery("select persona.id from IdiomaPersona p where id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
-        respond idiomaPersonaService.get(id), model:[per:per]
+        def str = IdiomaPersona.executeQuery("select persona.id from IdiomaPersona p where id ="+id)
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond idiomaPersonaService.get(id), model:[pos:pos]
     }
 
     def update(IdiomaPersona idiomaPersona) {
