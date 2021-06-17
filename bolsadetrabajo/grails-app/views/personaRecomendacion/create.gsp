@@ -8,8 +8,10 @@
     <body>
         <a href="#create-personaRecomendacion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
-            <ul><sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/user/index"><g:message code="default.home.label"/></a></li>
+            <ul>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
+                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
                 <li><a class="list" href="/personaRecomendacion/index/${sec.loggedInUserInfo(field: 'id')}">Referencias personales</a></li>
@@ -35,7 +37,7 @@
                     <f:field property="telefonoRecomendador"/>
                     <f:field property="correoRecomendador"/>
                     <f:field property="institucionRecomendacion"/>
-                    <input type="hidden" name="persona.id" value="${per}" required id= "${per}">
+                    <input type="hidden" name="persona.id" value="${pos}" required id= "${pos}">
                     </f:with>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="Agregar recomencación" />

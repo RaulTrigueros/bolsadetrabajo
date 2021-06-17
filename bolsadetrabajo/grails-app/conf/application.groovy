@@ -11,6 +11,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
     [pattern: '/dbconsole/**',              access: ['permitAll']],
     [pattern: '/console/**',                access: ['permitAll']],
     [pattern: '/index/',                    access: ['permitAll']],
+    [pattern: '/inicio/',                    access: ['permitAll']],
     [pattern: '/index.gsp',                 access: ['permitAll']],
     [pattern: '/**/js/**',                  access: ['permitAll']],
     [pattern: '/**/css/**',                 access: ['permitAll']],
@@ -79,7 +80,7 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/'
 grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
 
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/inicio'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/'
 
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/persona/index' /*carlos*/
 //grails.plugin.springsecurity.securityConfigType = "Annotation"

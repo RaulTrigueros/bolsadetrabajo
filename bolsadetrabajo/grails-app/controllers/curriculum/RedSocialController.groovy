@@ -13,20 +13,22 @@ class RedSocialController {
     def index(Integer id) {
         def usu =id
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))        
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        
         params.id = Math.min(id ?: 10, 100)
-        respond redSocialService.list(params), model:[usu:usu, per:per, redSocialCount: redSocialService.count()]
+        respond redSocialService.list(params), model:[usu:usu, pos:pos, redSocialCount: redSocialService.count()]
     }
 
     def show(Long id) {
-        def str = RedSocial.executeQuery("select id from RedSocial p where persona.id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
-        respond redSocialService.get(id), model:[per:per]
+
+        def str = RedSocial.executeQuery("select persona.id from RedSocial p where id ="+id)
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond redSocialService.get(id), model:[pos:pos]
     }
 
     def create(Long id) {
-        def per=id
-        respond new RedSocial(params), model:[per:per]
+        def pos=id
+        respond new RedSocial(params), model:[pos:pos]
     }
 
     def save(RedSocial redSocial) {
@@ -52,8 +54,9 @@ class RedSocialController {
     }
 
     def edit(Long id) {
-        def per=id
-        respond redSocialService.get(id), model:[per:per]
+        def str = RedSocial.executeQuery("select persona.id from RedSocial p where id ="+id)
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond redSocialService.get(id), model:[pos:pos]
     }
 
     def update(RedSocial redSocial) {

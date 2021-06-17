@@ -10,7 +10,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
@@ -38,7 +38,7 @@
                         <f:field property="linkedin"/>
                         <f:field property="facebook"/>
                         <f:field property="twitter"/>
-                        <input type="hidden" name="persona.id" value="${per}" required id="persona.id">
+                        <input type="hidden" name="persona.id" value="${pos}" required id= "${pos}">
                     </f:with>
                 </fieldset>
                 <fieldset class="buttons">

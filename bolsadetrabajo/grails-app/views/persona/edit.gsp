@@ -10,12 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="${createLink(uri: '/user/index')}">Principal</a></li>
-                <li><a class="home" href="${createLink(uri: '/persona/listar')}">Lista de Personas</a></li>
+                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
+                <li><a class="list" href="${createLink(uri: '/persona/listar')}">Lista de Personas</a></li>
                 <li><g:link class="create" action="create">Nueva Persona</g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                <li><a class="home" href="/persona/show/${usu}">Principal</a></li>
+                <li><a class="home" href="/persona/show/${pos}">Principal</a></li>
                 </sec:ifAnyGranted>
 
                 </ul>

@@ -43,8 +43,12 @@
                 <div class="button navbar-right"> 
                      
                     <sec:ifLoggedIn>
+                        <!--Acceder como Administrador-->
+                        <sec:ifAnyGranted roles="ROLE_ADMIN">
+                            <a class="btn btn-primary" href="/inicio/">Ir a <sec:username/></a> 
+                        </sec:ifAnyGranted>
                         <!--Acceder como postulante-->
-                        <sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_POSTULANTE">
+                        <sec:ifAnyGranted roles="ROLE_POSTULANTE">
                         <a class="btn btn-primary" href="/persona/index/${sec.loggedInUserInfo(field: 'id')}">Ir a <sec:username/></a> 
                        </sec:ifAnyGranted>
                        <!--Acceder como empresa-->

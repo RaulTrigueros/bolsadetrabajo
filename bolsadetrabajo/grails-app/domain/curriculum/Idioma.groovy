@@ -6,7 +6,7 @@ class Idioma {
     String nombreIdioma
     static hasMany=[idiomaPersona:IdiomaPersona]
     static constraints = {        
-        nombreIdioma (inList:["Ingles", "Francés", "Portugues","Alemán","Japonés","Chino","Vietnamita","Ruso","Mandarin","Hindi","Arabe","Nahuatl"])
+        nombreIdioma (nullable:true, blank:false, size:1..100)
         
     }
      static mapping ={

@@ -11,7 +11,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/">Principal</a></li>
+                <li><a class="home" href="/inicio/">Principal</a></li>
                 <li><g:link class="list" action="listar">Lista de Personas</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
                 </sec:ifAnyGranted>

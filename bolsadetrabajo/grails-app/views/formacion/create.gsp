@@ -9,8 +9,13 @@
         <a href="#create-formacion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <li><a class="list" href="/formacion/index/${sec.loggedInUserInfo(field: 'id')}">Formaciones</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-formacion" class="content scaffold-create" role="main">
@@ -27,7 +32,13 @@
             </g:hasErrors>
             <g:form resource="${this.formacion}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="formacion"/>
+                    <f:with bean="formacion">
+                    <f:field property="fechaFin"/>
+                    <f:field property="tipoFormacion"/>
+                    <f:field property="nombreFormacion"/>
+                    <f:field property="institucionDeFormacion"/>
+                    <input type="hidden" name="persona.id" value="${pos}" required id= "${pos}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

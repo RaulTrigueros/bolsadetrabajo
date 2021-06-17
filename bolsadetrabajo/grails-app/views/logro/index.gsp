@@ -10,14 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/user/index">Principal</a></li>
-                <li><g:link class="create" action="create">Nuevo logro</g:link></li>
-                <li><a class="home" href="${createLink(uri: 'roles')}">Ir a Roles</a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
+                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                <li><a class="home" href="/persona/show/${per}"><g:message code="default.home.label"/></a></li>
-                <li><a class="list" href="/logro/create/${per}"><g:message code="default.new.label" args="[entityName]" /></a></li>
-                
+                <li><a class="home" href="/persona/show/${pos}"><g:message code="default.home.label"/></a></li>
+                <li><a class="list" href="/logro/create/${pos}"><g:message  code="Agregar Logro" /></a></li>
                 </sec:ifAnyGranted>
             </ul>
         </div>

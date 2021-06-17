@@ -12,10 +12,10 @@ class PersonaController {
 
     def index(Long id) {
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
-        def usu = str.toString().replace("[", "").replace("]", "")
+        def pos = str.toString().replace("[", "").replace("]", "")
 
         def perfiles = PerfilPuesto.executeQuery("from PerfilPuesto")
-        [usu:usu, perfiles:perfiles]
+        [pos:pos, perfiles:perfiles]
     }
     
     def listar(Integer max) {
@@ -25,8 +25,8 @@ class PersonaController {
 
     def show(Long id) {
         if (id){
-            def usu = id
-            respond personaService.get(id),model:[usu:usu]
+            def pos = id
+            respond personaService.get(id),model:[pos:pos]
             
         }else {redirect action:"create"}
     }
@@ -58,8 +58,8 @@ class PersonaController {
     }
 
     def edit(Long id) {
-        def usu = id
-        respond personaService.get(id), model:[usu:usu]
+        def pos = id
+        respond personaService.get(id),model:[pos:pos]
     }
 
     def update(Persona persona) {

@@ -1,5 +1,6 @@
 package curriculum
 import seguridad.Persona
+
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -12,20 +13,20 @@ class FormacionController {
     def index(Integer id) {
         def usu =id
         def str = Persona.executeQuery("select id from Persona p where p.usuarios.id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
+        def pos =(str.toString().replace("[", "").replace("]", ""))
         params.id = Math.min(id ?: 10, 100)
-        respond formacionService.list(params), model:[usu:usu,per:per,formacionCount: formacionService.count()]
+        respond formacionService.list(params), model:[usu:usu,pos:pos,formacionCount: formacionService.count()]
     }
 
     def show(Long id) {
         def str = Formacion.executeQuery("select persona.id from Formacion p where id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
-        respond formacionService.get(id),model:[per:per]
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond formacionService.get(id),model:[pos:pos]
     }
 
     def create(Long id) {
-        def per=id
-        respond new Formacion(params),model:[per,per]
+        def pos=id
+        respond new Formacion(params),model:[pos,pos]
     }
 
     def save(Formacion formacion) {
@@ -52,8 +53,8 @@ class FormacionController {
 
     def edit(Long id) {
         def str = Formacion.executeQuery("select persona.id from Formacion p where id ="+id)
-        def per =(str.toString().replace("[", "").replace("]", ""))
-        respond formacionService.get(id),model:[per:per]
+        def pos =(str.toString().replace("[", "").replace("]", ""))
+        respond formacionService.get(id),model:[pos:pos]
     }
 
     def update(Formacion formacion) {

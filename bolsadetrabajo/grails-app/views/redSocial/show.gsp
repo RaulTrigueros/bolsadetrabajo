@@ -10,12 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/user/index"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>          
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
-                    <li><a class="list" href="/redSocial/index/${per}"> <g:message code="default.list.label" args="[entityName]" /></a></li>
+                    <li><a class="list" href="/redSocial/index/${sec.loggedInUserInfo(field: 'id')}"> <g:message code="default.list.label" args="[entityName]" /></a></li>
                 </sec:ifAnyGranted>
             </ul>
         </div>
@@ -24,7 +24,12 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="redSocial" />
+            <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <f:display bean="redSocial"/>
+            </sec:ifAnyGranted>
+            <sec:ifAnyGranted roles="ROLE_POSTULANTE">
+                <f:display bean="redSocial" except="persona"/>
+            </sec:ifAnyGranted>
             <g:form resource="${this.redSocial}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.redSocial}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
