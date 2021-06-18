@@ -20,8 +20,8 @@
                         <div class="job-posts">
                             <table id="TablaEmpleos" class="table table-sm table-hover table-striped">
                                 <thead>
-                                    <tr class="" data-wow-delay="1s">
-                                        <th class="sortable">Nombre de Puesto</th>
+                                    <tr class="even wow fadeInUp" data-wow-delay="1s">
+                                        <th class="text-center">Nombre de Puesto</th>
                                         <th class="text-center">Descripción</th>
                                         <th class="text-center">Conocimientos Necesario</th>
                                         <th class="text-center">Perfil Académico</th>
