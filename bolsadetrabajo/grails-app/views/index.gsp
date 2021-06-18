@@ -92,7 +92,17 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
                         <h2>BADMASTERS OFERTAS DE TRABAJO, OPORTUNIDADES DE EMPLEO</h2>
-                        <div class="search-form wow pulse" data-wow-delay="0.8s">
+                        <section class="jumbotron text-center" style="background:transparent !important">
+                            <div class="container">
+                            <h1 class="jumbotron-heading">Impulse su futuro</h1>
+                            <h4 class="lead">Encuentre trabajo con compañias de confianza que le permitan desarrollar su carrera profesional
+                            </h4>
+                            <p>
+                                <a class="btn btn-primary btn-lg" href="/login/auth">Acceder</a>
+                            </p>
+                            </div>
+                        </section>
+                        <%-- <div class="search-form wow pulse" data-wow-delay="0.8s">
                             <form action="" class=" form-inline">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Job Key Word">
@@ -118,7 +128,7 @@
 
 
                             </form>
-                        </div>
+                        </div> --%>                        
                     </div>
                 </div>
             </div>
@@ -154,8 +164,7 @@
                             <div class="footer-links">
                                 <ul class="list-unstyled">
                                     <li><a href="/login/auth">Candidato</a></li>
-                                    <li><a href="/loginEmpresa/authEmp" class="active">Empresa</a></li>
-                                    
+                                    <li><a href="/loginEmpresa/authEmp" class="active">Empresa</a></li>                                    
                                 </ul>
                             </div>
                         </div>
