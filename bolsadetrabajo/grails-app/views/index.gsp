@@ -31,6 +31,8 @@
         <asset:stylesheet src="responsive.css"/>
         <asset:javascript src="/vendor/modernizr-2.6.2.min.js"/>
         <script src="javascripts/vendor/modernizr-2.6.2.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
     </head>
     <body>
     
@@ -122,7 +124,6 @@
             </div>
         </div>
 
-        
         <div class="footer-area">
             <div class="container">
                 <div class="row footer">
@@ -180,6 +181,6 @@
          <asset:javascript src="owl.carousel.min.js"/>
          <asset:javascript src="wow.js"/>
          <asset:javascript src="main.js"/>
-        
+         <asset:javascript src="busqueda.js"/>
     </body>
 </html>
