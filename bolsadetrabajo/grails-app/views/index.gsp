@@ -55,6 +55,9 @@
                         <sec:ifAnyGranted roles="ROLE_EMPRESA">
                             <a class="btn btn-primary" href="/empresa/index/${sec.loggedInUserInfo(field: 'id')}">Ir a <sec:username/></a> 
                         </sec:ifAnyGranted>
+                        
+                         <a class="btn btn-primary" href="/inicio/">Inicio <sec:username/></a> 
+                        
                         <!--Salir-->
                         <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
                     </sec:ifLoggedIn>
