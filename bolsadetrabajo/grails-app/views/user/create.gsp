@@ -10,6 +10,7 @@
         <a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul> 
+                <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li> 
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li><a class="list" href="${createLink(uri: 'listar')}">Lista de Usuarios</a></li>
                 </sec:ifAnyGranted>
