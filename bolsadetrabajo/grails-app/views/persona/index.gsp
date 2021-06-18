@@ -76,10 +76,7 @@
                 <div class="row job-posting wow fadeInUp" data-wow-delay="1s">
                     <div role="tabpanel">
                       <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#job-seekers" aria-controls="home" role="tab" data-toggle="tab">Job Seekers</a></li>
-                        <li role="presentation"><a href="#employeers" aria-controls="profile" role="tab" data-toggle="tab">Employeers</a></li>
-                      </ul>
+                      
 
                       <!-- Tab panes -->
                       <div class="tab-content">

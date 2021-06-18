@@ -11,8 +11,8 @@
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li><a class="home" href="/inicio/">Principal</a></li>
-                <li><g:link class="list" action="listar">Lista de Personas</g:link></li>
-                <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
+                <li><g:link class="list" action="listar">Lista de Empresas</g:link></li>
+                <li><g:link class="create" action="create">Nueva Empresa</g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_EMPRESA">
                 <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>

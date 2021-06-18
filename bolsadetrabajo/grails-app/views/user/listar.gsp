@@ -13,7 +13,7 @@
             <ul>
                 <li><a class="home" href="${createLink(uri: 'index')}">Principal</a></li>
                 <li><g:link class="create" action="create">Nuevo Usuario</g:link></li>
-                <li><a class="home" href="${createLink(uri: 'roles')}">Ir a Roles</a></li>
+                
             </ul>
         </div>
         <div id="list-user" class="content scaffold-list" role="main">

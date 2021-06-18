@@ -192,7 +192,6 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/user/listar">Lista Usuarios</a>
-                                    <a class="nav-link" href="/userRole/index/">Roles de Usuario</a>
                                     <a class="nav-link" href="/role/index/">Lista de Roles</a>
                                 </nav>
                             </div>
