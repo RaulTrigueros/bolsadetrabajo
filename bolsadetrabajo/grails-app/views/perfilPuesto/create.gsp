@@ -14,7 +14,7 @@
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_EMPRESA">
-                <li><a class="home" href="/empresa/index/${sec.loggedInUserInfo(field: 'id')}">principal</a></li>
+                <li><a class="list" href="/perfilPuesto/index/${sec.loggedInUserInfo(field: 'id')}">Listado de puestos</a></li>
                 </sec:ifAnyGranted>
             </ul>
         </div>

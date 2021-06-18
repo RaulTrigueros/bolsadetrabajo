@@ -9,18 +9,23 @@ class PerfilPuestoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        def emp=max
-        params.max = Math.min(max ?: 10, 100)
-        respond perfilPuestoService.list(params), model:[emp:emp,perfilPuestoCount: perfilPuestoService.count()]
+    def index(Long id) {
+        //def str = Empresa.executeQuery("select id from Empresa e where e.usuarios.id ="+id)
+        def emp = id//str.toString().replace("[", "").replace("]", "")
+        params.id = Math.min(id ?: 10, 100)
+        respond perfilPuestoService.list(params), model:[emp:emp, perfilPuestoCount: perfilPuestoService.count()]
     }
 
     def show(Long id) {
-        respond perfilPuestoService.get(id)
+        def str = PerfilPuesto.executeQuery("select empresa from PerfilPuesto e where e.empresa ="+id)
+        def emp = str.toString().replace("[", "").replace("]", "")
+        println(emp)
+        respond perfilPuestoService.get(id),model:[emp:emp]
     }
 
     def create(long id) {
-        def emp = id
+        def str = Empresa.executeQuery("select id from Empresa e where e.usuarios.id ="+id)
+        def emp = str.toString().replace("[", "").replace("]", "")
         respond new PerfilPuesto(params),model:[emp:emp]
     }
 

@@ -14,7 +14,7 @@
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_EMPRESA">
-                <li><a class="home" href="/empresa/index/${sec.loggedInUserInfo(field: 'id')}">principal</a></li>
+                <li><a class="list" href="/perfilPuesto/index/${sec.loggedInUserInfo(field: 'id')}">Listado de puestos</a></li>
                 </sec:ifAnyGranted>
             </ul>
         </div>
@@ -33,7 +33,18 @@
             <g:form resource="${this.perfilPuesto}" method="PUT">
                 <g:hiddenField name="version" value="${this.perfilPuesto?.version}" />
                 <fieldset class="form">
-                    <f:all bean="perfilPuesto"/>
+                    <f:with bean="perfilPuesto">
+                    <f:field property="nombrePuestoTrabajo"/>
+                    <f:field property="descripcionPuesto"/>
+                    <f:field property="conocimientosNecesarios"/>
+                    <f:field property="perfilAcademico" />
+                    <f:field property="habilidades" />
+                    <f:field property="experienciaLaboral"/>
+                    <f:field property="salarioMin"/>
+                    <f:field property="salarioMax"/>
+                    <f:field property="ubicacionGeografica"/>
+                    <input type="hidden" name="empresa.id" value="${emp}" required id= "${emp}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

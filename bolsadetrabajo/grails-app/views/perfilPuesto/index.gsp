@@ -16,7 +16,7 @@
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_EMPRESA">
                 <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
-                <li><a class="create" href="/perfilPuesto/create/${emp}">Crear nuevo Perfil de puesto</a></li>
+                <li><a class="create" href="/perfilPuesto/create/${sec.loggedInUserInfo(field: 'id')}">Crear nuevo Perfil de puesto</a></li>
 
                 </sec:ifAnyGranted>
             </ul>
