@@ -8,7 +8,10 @@ class EmailSenderController {
     def index() { }
     def contacto() {}
     def desbloqueo() {}
-    def cambioRol() {}
+    def cambioRol(Long id) {
+        def pos = id
+        [pos:pos]
+    }
     
     def send() {
         def multipartFile = request.getFile('attachment')

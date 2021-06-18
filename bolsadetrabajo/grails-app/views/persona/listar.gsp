@@ -10,7 +10,6 @@
         
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="/inicio/">Principal</a></li>
                 <li><g:link class="create" action="create">Nueva Persona</g:link></li>
             </ul>
         </div>

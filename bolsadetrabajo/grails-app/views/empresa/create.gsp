@@ -10,8 +10,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
-                <li><a class="home" href="${createLink(uri: '/empresa/listar')}">Lista de Empresas</a></li>
+                <li><a class="list" href="${createLink(uri: '/empresa/listar')}">Lista de Empresas</a></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_EMPRESA">
                 <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>

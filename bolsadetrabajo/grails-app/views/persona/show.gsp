@@ -11,7 +11,6 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/inicio/">Principal</a></li>
                 <li><g:link class="list" action="listar">Lista de Personas</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Persona</g:link></li>
                 </sec:ifAnyGranted>
@@ -35,7 +34,12 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
+            <sec:ifAnyGranted roles="ROLE_ADMIN">
+            <f:display bean="persona" except="recomendaciones,redes,certificaciones,experienciasLaborales,publicacion,logros,idiomas,telefono"/>
+            </sec:ifAnyGranted>
+            <sec:ifAnyGranted roles="ROLE_POSTULANTE">
             <f:display bean="persona" except="recomendaciones,redes,certificaciones,experienciasLaborales,publicacion,logros,idiomas,usuarios,telefono"/>
+            </sec:ifAnyGranted>
             <g:form resource="${this.persona}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.persona}">Editar</g:link>

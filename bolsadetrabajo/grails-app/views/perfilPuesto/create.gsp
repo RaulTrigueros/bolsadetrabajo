@@ -9,9 +9,13 @@
         <a href="#create-perfilPuesto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/inicio/"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                 
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <li><a class="home" href="/empresa/index/${sec.loggedInUserInfo(field: 'id')}">principal</a></li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="create-perfilPuesto" class="content scaffold-create" role="main">
@@ -28,7 +32,18 @@
             </g:hasErrors>
             <g:form resource="${this.perfilPuesto}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="perfilPuesto"/>
+                    <f:with bean="perfilPuesto">
+                    <f:field property="nombrePuestoTrabajo"/>
+                    <f:field property="descripcionPuesto"/>
+                    <f:field property="conocimientosNecesarios"/>
+                    <f:field property="perfilAcademico" />
+                    <f:field property="habilidades" />
+                    <f:field property="experienciaLaboral"/>
+                    <f:field property="salarioMin"/>
+                    <f:field property="salarioMax"/>
+                    <f:field property="ubicacionGeografica"/>
+                    <input type="hidden" name="empresa.id" value="${emp}" required id= "${emp}">
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

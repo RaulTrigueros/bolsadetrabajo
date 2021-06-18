@@ -10,8 +10,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
-                <li><a class="home" href="${createLink(uri: '/persona/listar')}">Lista de Personas</a></li>
+                <li><a class="list" href="${createLink(uri: '/persona/listar')}">Lista de Personas</a></li>
                 </sec:ifAnyGranted>
                 <sec:ifAnyGranted roles="ROLE_POSTULANTE">
                 <li><a class="home" href="/persona/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
@@ -37,6 +36,7 @@
                     <f:field property="apellidos"/>
                     <f:field property="genero"/>
                     <f:field property="fechaNac"/>
+                    <f:field property="edad"/>
                     <f:field property="pais"/>
                     <f:field property="tipoDocumento"/>
                     <f:field property="numDocumento"/>

@@ -27,7 +27,7 @@ class PersonaController {
         if (id){
             def pos = id
             respond personaService.get(id),model:[pos:pos]
-            
+
         }else {redirect action:"create"}
     }
 

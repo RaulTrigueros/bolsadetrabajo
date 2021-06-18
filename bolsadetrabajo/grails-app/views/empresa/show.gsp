@@ -10,7 +10,6 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="/inicio/">Principal</a></li>
                 <li><g:link class="list" action="listar">Lista de Empresas</g:link></li>
                 <li><g:link class="create" action="create">Nueva Empresa</g:link></li>
                 </sec:ifAnyGranted>
@@ -24,7 +23,12 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="empresa" except="perfilPuesto,usuarios"/>
+            <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <f:display bean="empresa" except="perfilPuesto"/>
+            </sec:ifAnyGranted>
+            <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <f:display bean="empresa" except="perfilPuesto,usuarios"/>
+            </sec:ifAnyGranted>
             <g:form resource="${this.empresa}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.empresa}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

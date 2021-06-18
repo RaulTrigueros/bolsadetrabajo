@@ -10,7 +10,6 @@
         <div class="nav" role="navigation">
             <ul>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                <li><a class="home" href="${createLink(uri: '/inicio/')}">Principal</a></li>
                 <li><a class="list" href="${createLink(uri: '/empresa/listar')}">Lista de Empresas</a></li>
                 <li><g:link class="create" action="create">Nueva Empresa</g:link></li>
                 </sec:ifAnyGranted>

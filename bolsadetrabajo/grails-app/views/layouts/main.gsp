@@ -160,7 +160,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/persona/show/${pos}" style="padding: 10px 14px;">Area personal</a></li>
-                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/emailSender/cambioRol" style="padding: 10px 14px;">Solicitar un nuevo Rol</a></li>
+                        <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/emailSender/cambioRol/${pos}" style="padding: 10px 14px;">Solicitar un nuevo Rol</a></li>
                         <li><a class="dropdown-item u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/logout" style="padding: 10px 14px;">Cerrar sesion</a></li>
                                            
                     </ul> 
@@ -183,42 +183,42 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Administracion</div>
+                            <div class="sb-sidenav-menu-heading">Gestión de Cuentas</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Usuarios
+                                Gestión de cuentas de Usuarios
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/user/listar">Lista Usuarios</a>
+                                    <a class="nav-link" href="/user/listar">Lista de Usuarios</a>
                                     <a class="nav-link" href="/role/index/">Lista de Roles</a>
                                 </nav>
                             </div>
                            
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePersona" aria-expanded="false" aria-controls="collapsePersona">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Persona
+                                Gestión de cuentas de Postulantes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePersona" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/persona/listar">Lista Persona</a>
-                                    <a class="nav-link" href="/certificacion/index/">Certificacion</a>
-                                    <a class="nav-link" href="/explaboral/index/">Experiencia laboral</a>
-                                    <a class="nav-link" href="/formacion/index/">Formacion</a>
-                                    <a class="nav-link" href="/habilidadTecnica/index">Habilidades técnicas</a>
-                                    <a class="nav-link" href="/idioma/index">Idioma</a>
-                                    <a class="nav-link" href="/idiomaPersona/index">Idioma persona</a>
-                                    <a class="nav-link" href="/logro/index/">Logro</a>
-                                    <a class="nav-link" href="/participacionEvento/index/">Participacion Evento</a>
-                                    <a class="nav-link" href="/personaRecomendacion/index/">Recomendacion</a>
-                                    <a class="nav-link" href="/publicacion/index/">publicacion</a>
-                                    <a class="nav-link" href="/redSocial/index/">Red social</a>
-                                    <a class="nav-link" href="/tipoEvento/index/">tipo de evento</a>
+                                    <a class="nav-link" href="/persona/listar">Listado de Personas</a>
                                 </nav>
                             </div>
                             
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmpresa" aria-expanded="false" aria-controls="collapseEmpresa">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Gestión de cuentas de Empresas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseEmpresa" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/empresa/listar">Listado de Empresas</a>     
+                                </nav>
+                            </div>
+                            
+                            <div class="sb-sidenav-menu-heading">Catálogos Generales</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUbicacion" aria-expanded="false" aria-controls="collapseUbicacion">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ubicacion
@@ -231,7 +231,16 @@
                                     <a class="nav-link" href="/municipio/index/">Municipio</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseIdioma" aria-expanded="false" aria-controls="collapseIdioma">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Idioma
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseIdioma" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/idioma/index">Idioma</a>
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEvaluacion" aria-expanded="false" aria-controls="collapseEvaluacion">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Evaluacion
@@ -239,25 +248,21 @@
                             </a>
                             <div class="collapse" id="collapseEvaluacion" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/evaluacion/index">listar Evaluaciones</a>
-                                    <a class="nav-link" href="/preguntas/index/">Preguntas</a>
-                                    <a class="nav-link" href="/recordDeNotas/index/">Record de notas</a>
-                                    <a class="nav-link" href="/Respuestas/index/">Respuestas</a>
                                     <a class="nav-link" href="/tipoEvaluacion/index/">Tipo de Evaluacion</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmpresa" aria-expanded="false" aria-controls="collapseEmpresa">
+                            
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEvento" aria-expanded="false" aria-controls="collapseEvento">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Empresa
+                                Evento
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseEmpresa" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseEvento" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/empresa/listar">Empresa</a>
-                                    <a class="nav-link" href="/perfilPuesto/index">Perfil Puesto</a>      
+                                    <a class="nav-link" href="/tipoEvento/index/">tipo de evento</a>
                                 </nav>
                             </div>
-
+                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

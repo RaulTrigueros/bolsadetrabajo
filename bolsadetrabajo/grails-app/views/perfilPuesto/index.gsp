@@ -9,8 +9,16 @@
         <a href="#list-perfilPuesto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li><a class="home" href="/inicio/">Principal</a></li>
+                <li><g:link class="list" action="listar">Lista Perfil de Puestos</g:link></li>
+                <li><g:link class="create" action="create">Perfil de Puesto</g:link></li>
+                </sec:ifAnyGranted>
+                <sec:ifAnyGranted roles="ROLE_EMPRESA">
+                <li><a class="home" href="/empresa/index/<sec:loggedInUserInfo field='id'/>">Principal</a></li>
+                <li><a class="create" href="/perfilPuesto/create/${emp}">Crear nuevo Perfil de puesto</a></li>
+
+                </sec:ifAnyGranted>
             </ul>
         </div>
         <div id="list-perfilPuesto" class="content scaffold-list" role="main">

@@ -10,16 +10,18 @@ class PerfilPuestoController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        def emp=max
         params.max = Math.min(max ?: 10, 100)
-        respond perfilPuestoService.list(params), model:[perfilPuestoCount: perfilPuestoService.count()]
+        respond perfilPuestoService.list(params), model:[emp:emp,perfilPuestoCount: perfilPuestoService.count()]
     }
 
     def show(Long id) {
         respond perfilPuestoService.get(id)
     }
 
-    def create() {
-        respond new PerfilPuesto(params)
+    def create(long id) {
+        def emp = id
+        respond new PerfilPuesto(params),model:[emp:emp]
     }
 
     def save(PerfilPuesto perfilPuesto) {
