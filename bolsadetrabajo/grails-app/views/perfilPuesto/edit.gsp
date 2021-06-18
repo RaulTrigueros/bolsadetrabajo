@@ -48,7 +48,7 @@
                     </f:with>
                     </sec:ifAnyGranted>
                     <sec:ifAnyGranted roles="ROLE_ADMIN">
-                        <f:all bean="perfilPuesto">
+                        <f:all bean="perfilPuesto"/>
                     </sec:ifAnyGranted>
                 </fieldset>
                 <fieldset class="buttons">
