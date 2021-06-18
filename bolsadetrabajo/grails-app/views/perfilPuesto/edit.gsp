@@ -33,6 +33,7 @@
             <g:form resource="${this.perfilPuesto}" method="PUT">
                 <g:hiddenField name="version" value="${this.perfilPuesto?.version}" />
                 <fieldset class="form">
+                    <sec:ifAnyGranted roles="ROLE_POSTULANTE">
                     <f:with bean="perfilPuesto">
                     <f:field property="nombrePuestoTrabajo"/>
                     <f:field property="descripcionPuesto"/>
@@ -45,6 +46,10 @@
                     <f:field property="ubicacionGeografica"/>
                     <input type="hidden" name="empresa.id" value="${emp}" required id= "${emp}">
                     </f:with>
+                    </sec:ifAnyGranted>
+                    <sec:ifAnyGranted roles="ROLE_ADMIN">
+                        <f:all bean="perfilPuesto">
+                    </sec:ifAnyGranted>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
